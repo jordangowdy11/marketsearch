@@ -15,6 +15,16 @@ import { JavaScriptComponent } from './java-script/java-script.component';
 import { CSharpComponent } from './csharp/csharp.component';
 import { MicrosoftComponent } from './microsoft/microsoft.component';
 import { JavaComponent } from './java/java.component';
+import { PermanantsqlComponent } from './permanantsql/permanantsql.component';
+import { PermanantjavascriptComponent } from './permanantjavascript/permanantjavascript.component';
+import { PermanantcsharpComponent } from './permanantcsharp/permanantcsharp.component';
+import { PermanantmicrosoftComponent } from './permanantmicrosoft/permanantmicrosoft.component';
+import { PermanantjavaComponent } from './permanantjava/permanantjava.component';
+import { PermananthtmlComponent } from './permananthtml/permananthtml.component';
+import { PermanantpythonComponent } from './permanantpython/permanantpython.component';
+import { PermanantscrumComponent } from './permanantscrum/permanantscrum.component';
+import { PermanantdevopsComponent } from './permanantdevops/permanantdevops.component';
+import { PermanantawsComponent } from './permanantaws/permanantaws.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +40,17 @@ import { JavaComponent } from './java/java.component';
     JavaScriptComponent,
     CSharpComponent,
     MicrosoftComponent,
-    JavaComponent
+    JavaComponent,
+    PermanantsqlComponent,
+    PermanantjavascriptComponent,
+    PermanantcsharpComponent,
+    PermanantmicrosoftComponent,
+    PermanantjavaComponent,
+    PermananthtmlComponent,
+    PermanantpythonComponent,
+    PermanantscrumComponent,
+    PermanantdevopsComponent,
+    PermanantawsComponent
 
   ],
   imports: [
