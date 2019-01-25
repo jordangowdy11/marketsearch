@@ -5,7 +5,7 @@ var bodyparser = require("body-parser")
 app.use(bodyparser.urlencoded({extended:false}))
 app.use(bodyparser.json())
 
-var MongoClient = require('mongodb').MongoClient
+// var MongoClient = require('mongodb').MongoClient
 
 var langData = {
     language:'Python',
@@ -52,4 +52,9 @@ app.get('/permanent/list/:language',(req,res) => {
         })
 
     })
+})
+
+app.listen(port, () =>{
+    console.log("IT Market App listening on port ${port}!");
+    console.log("Startup Logic");
 })
