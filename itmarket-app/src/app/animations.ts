@@ -4,32 +4,62 @@ import {
     style,
     animate,
     transition,
-    query
+    query,
+    animateChild,
+    group
   } from '@angular/animations';
 
-  export const fadeAnimation = trigger('fadeAnimation', [
-    // The '* => *' will trigger the animation to change between any two states
-  transition('* => *', [
-    // The query function has three params.
-    // First is the event, so this will apply on entering or when the element is added to the DOM.
-    // Second is a list of styles or animations to apply.
-    // Third we add a config object with optional set to true, this is to signal
-    query(
-      ':enter',
-      [style({ opacity: 0 })],
-      { optional: true }
-    ),
-    query(
-      ':leave',
-      // here we apply a style 
-      //uses animate function, 0.3 seconds, change if needed
-      [style({ opacity: 1 }), animate('0.3s', style({ opacity: 0 }))],
-      { optional: true }
-    ),
-    query(
-      ':enter',
-      [style({ opacity: 0 }), animate('0.3s', style({ opacity: 1 }))],
-      { optional: true }
-    )
-  ])
-]);
+  export const slideInAnimation =
+  trigger('routeAnimations', [
+    transition('HomePage <=> AboutPage', [
+      style({ position: 'relative' }),
+      query(':enter, :leave', [
+        style({
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%'
+        })
+      ]),
+      query(':enter', [
+        style({ left: '-100%'})
+      ]),
+      query(':leave', animateChild()),
+      group([
+        query(':leave', [
+          animate('300ms ease-out', style({ left: '100%'}))
+        ]),
+        query(':enter', [
+          animate('300ms ease-out', style({ left: '0%'}))
+        ])
+      ]),
+      query(':enter', animateChild()),
+    ]),
+    transition('* <=> FilterPage', [
+      style({ position: 'relative' }),
+      query(':enter, :leave', [
+        style({
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%'
+        })
+      ]),
+      query(':enter', [
+        style({ left: '-100%'})
+      ]),
+      query(':leave', animateChild()),
+      group([
+        query(':leave', [
+          animate('200ms ease-out', style({ left: '100%'}))
+        ]),
+        query(':enter', [
+          animate('300ms ease-out', style({ left: '0%'}))
+        ])
+      ]),
+      query(':enter', animateChild()),
+    ])  
+  ]);
+
+ 
+      
