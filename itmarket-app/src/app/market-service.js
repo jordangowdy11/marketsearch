@@ -45,7 +45,7 @@ app.get('/permanent/list/:language',(req,res) => {
             if(err) throw err
 
         var permanent = result[0].permanent;
-        message=statistics.length+"Data for language: "+language
+        message="Data for language: "+language
         console.log(language)
         console.log(message)
         res.send(language)
