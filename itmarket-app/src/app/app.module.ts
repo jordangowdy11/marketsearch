@@ -4,11 +4,13 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HtmlComponent } from './html/html.component';
+import { SqlComponent } from './sql/sql.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HtmlComponent
+    HtmlComponent,
+    SqlComponent
   ],
   imports: [
     BrowserModule,
