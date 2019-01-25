@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Statistics } from './stats';
 
 
 @Component({
@@ -8,4 +9,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'itmarket-app';
+
+  stats: Statistics[]
 }
