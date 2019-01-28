@@ -13,8 +13,8 @@ export class HTTPService{
         this.rootURL="http://localhost:3990/"
     }
 
-getJavaScript(language:string):Observable<JavaScript[]>{
+    get(language:string):Observable<JavaScript[]>{
     return this.httpsvc.get<JavaScript[]>(
-        this.rootURL+"list/"+language)
+        this.rootURL+"list/:"+language)
 }
 }
