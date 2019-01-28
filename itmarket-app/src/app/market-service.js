@@ -40,6 +40,11 @@ app.get('/permanent/list/:language',(req,res) => {
     // });
     
     
+    MongoClient.connect('mongodb://localhost:27017/js_data',
+        function (err,client){
+            if(err) throw err
+
+        var db = client.db('language_date')
     MongoClient.connect('mongodb://localhost:27017/language_data',
         function (err,client){
             if(err) throw err
@@ -60,7 +65,10 @@ app.get('/permanent/list/:language',(req,res) => {
     })
 })
 
+
+
 app.listen(port, () =>{
     console.log("IT Market App listening on port ${port}!");
     console.log("Startup Logic");
+})
 })

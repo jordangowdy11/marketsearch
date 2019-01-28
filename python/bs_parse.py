@@ -7,10 +7,15 @@ from bs4 import BeautifulSoup
 import pandas as pd
 
 pp = pprint.PrettyPrinter()
+<<<<<<< HEAD
+
+jobswatch_url = "https://www.itjobswatch.co.uk/jobs/uk/python.do"
+=======
 jobswatch_url = "https://www.itjobswatch.co.uk/jobs/uk/Javascript.do"
 column_titles = ('thisyeardata', 'lastyeardata', 'twoyearagodata')
 filename = "js_rows.csv"
 row_length = 3
+>>>>>>> ba51e96ec86ec8119f87c1cf3266889bc0cea764
 
 make_request = requests.get(jobswatch_url)
 soup = BeautifulSoup(make_request.text, features="lxml")
