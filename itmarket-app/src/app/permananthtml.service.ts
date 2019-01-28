@@ -9,31 +9,14 @@ import { Observable } from 'rxjs';
 
 export class PermananthtmlService {
 
-  rootURL=""
-  constructor(private httpsvc:HttpClient) { 
-    this.rootURL="http://localhost:9000/permananthtmlts"
-  }
-  getPermananthtmls():Observable<Permananthtml[]> {
-    return this.httpsvc.get<Permananthtml[]>(this.rootURL+"/listPermananthtml") 
+  rootURL:string
+  
+  constructor(private httpsvc:HttpClient){
+      this.rootURL="http://localhost:3990/"
   }
 
-  addNewPermananthtml(newPermananthtml:Permananthtml):Observable<Permananthtml>{
-    const httpOpts ={
-   headers: new HttpHeaders(
-     {'Content-Type':
-     'application/x-www-form-urlencoded;charset=UTF-8'})
-   }
-   var reqBody="name="+newPermananthtml.name+"&price="+newPermananthtml.unitPrice
-
-   return this.httpsvc.post<Permananthtml>(
-     this.rootURL+"/register",reqBody,httpOpts)
-   }
-
-   deleteProduct(productId:number):Observable<Permananthtml>{
-     return this.httpsvc.request<Permananthtml>('DELETE',this.rootURL+"/delete",
-    {
-      headers:new HttpHeaders({'Content-Type': 'text/plain'}),
-  body:productId
-      })
-   }
+getStatisticList(language:string):Observable<Statistics[]>{
+  return this.httpsvc.get<Statistics[]>(
+      this.rootURL+"list/"+language)
+}
 }

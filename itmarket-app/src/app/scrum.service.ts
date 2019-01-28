@@ -1,30 +1,21 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Statistics } from "./stats";
 @Injectable({
   providedIn: 'root'
 })
 export class ScrumService{
-
-  rootURL=""
-  constructor(private httpsvc:HttpClient) {
-    this.rootURL="http://localhost:9900/products"
+  rootURL:string
+  
+  constructor(private httpsvc:HttpClient){
+      this.rootURL="http://localhost:3990/"
   }
-    getScrumServices():Observable<ScrumService[]> {
-      return this.httpsvc.get<ScrumService[]>(this.rootURL+"/list") 
-    }
 
-    addNewScrumService(newScrumService:ScrumService):Observable<ScrumService>{
-      const httpOpts ={
-     headers: new HttpHeaders(
-       {'Content-Type':
-       'application/x-www-form-urlencoded;charset=UTF-8'})
-     }
-      var reqBody="location="+newScrumService.location+"&wage="+newScrumService.wage
-     return this.httpsvc.post<ScrumService>(
-       this.rootURL+"/register",reqBody,httpOpts)
-     }
-     
+getStatisticList(language:string):Observable<Statistics[]>{
+  return this.httpsvc.get<Statistics[]>(
+      this.rootURL+"list/"+language)
+}
 
 
 }

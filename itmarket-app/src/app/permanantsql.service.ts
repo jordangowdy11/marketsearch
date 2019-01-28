@@ -1,35 +1,20 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Statistics } from "./stats";
 @Injectable({
   providedIn: 'root'
 })
 export class PermanantsqlService{
 
-  rootURL=""
-  constructor(private httpsvc:HttpClient) {
-    this.rootURL="http://localhost:9900/permanantsqlservices"
+  rootURL:string
+  
+  constructor(private httpsvc:HttpClient){
+      this.rootURL="http://localhost:3990/"
   }
-    getPermanantsqlServices():Observable<PermanantsqlService[]> {
-      return this.httpsvc.get<PermanantsqlService[]>(this.rootURL+"/list") 
-    }
 
-    addNewPermanantsqlService(newPermanantsqlService:PermanantsqlService):Observable<PermanantsqlService>{
-      const httpOpts ={
-     headers: new HttpHeaders(
-       {'Content-Type':
-       'application/x-www-form-urlencoded;charset=UTF-8'})
-     }
- 
-     return this.httpsvc.post<PermanantsqlService>(
-       this.rootURL+"/register",reqBody,httpOpts)
-     }
-
-     deletePermanantsqlService(productId:number):Observable<PermanantsqlService>{
-       return this.httpsvc.request<PermanantsqlService>('DELETE',this.rootURL+"/delete",
-      {
-        headers:new HttpHeaders({'Content-Type': 'text/plain'}),
-    body:productId
-        })
-     }
+getStatisticList(language:string):Observable<Statistics[]>{
+  return this.httpsvc.get<Statistics[]>(
+      this.rootURL+"list/"+language)
+}
 }

@@ -1,41 +1,21 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-
-
-
-
+import { Statistics } from "./stats";
 
 @Injectable({
   providedIn: 'root'
 })
 export class PermanantjavascriptService {
 
-  rootURL=""
-  constructor(private httpsvc:HttpClient) {
-    this.rootURL="http://localhost:9900/PermanantjavascriptService"
+  rootURL:string
+  
+  constructor(private httpsvc:HttpClient){
+      this.rootURL="http://localhost:3990/"
   }
-    getPermanantjavascriptServices():Observable<PermanantjavascriptService[]> {
-      return this.httpsvc.get<PermanantjavascriptService[]>(this.rootURL+"/list") 
-    }
 
-    addNewPermanantjavascriptService(newPermanantjavascriptService:PermanantjavascriptService):Observable<PermanantjavascriptService>{
-      const httpOpts ={
-     headers: new HttpHeaders(
-       {'Content-Type':
-       'application/x-www-form-urlencoded;charset=UTF-8'})
-     }
-     
- 
-     return this.httpsvc.post<PermanantjavascriptService>(
-       this.rootURL+"/register",reqBody,httpOpts)
-     }
-
-     deletePermanantjavascriptService(productId:number):Observable<PermanantjavascriptService>{
-       return this.httpsvc.request<PermanantjavascriptService>('DELETE',this.rootURL+"/delete",
-      {
-        headers:new HttpHeaders({'Content-Type': 'text/plain'}),
-    body:productId
-        })
-     }
+getStatisticList(language:string):Observable<Statistics[]>{
+  return this.httpsvc.get<Statistics[]>(
+      this.rootURL+"list/"+language)
+}
 }

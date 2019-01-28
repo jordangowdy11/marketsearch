@@ -8,30 +8,14 @@ import { Observable } from 'rxjs';
 })
 export class PermanantjavaService{
 
-  rootURL=""
-  constructor(private httpsvc:HttpClient) {
-    this.rootURL="http://localhost:9900/permanantjavaservices"
+  rootURL:string
+  
+  constructor(private httpsvc:HttpClient){
+      this.rootURL="http://localhost:3990/"
   }
-    getPermanantjavaServices():Observable<PermanantjavaService[]> {
-      return this.httpsvc.get<PermanantjavaService[]>(this.rootURL+"/list") 
-    }
 
-    addNewPermanantjavaService(newPermanantjavaService:PermanantjavaService):Observable<PermanantjavaService>{
-      const httpOpts ={
-     headers: new HttpHeaders(
-       {'Content-Type':
-       'application/x-www-form-urlencoded;charset=UTF-8'})
-     }
- 
-     return this.httpsvc.post<PermanantjavaService>(
-       this.rootURL+"/register",reqBody,httpOpts)
-     }
-
-     deletePermanantjavaService(productId:number):Observable<PermanantjavaService>{
-       return this.httpsvc.request<PermanantjavaService>('DELETE',this.rootURL+"/delete",
-      {
-        headers:new HttpHeaders({'Content-Type': 'text/plain'}),
-    body:productId
-        })
-     }
+getStatisticList(language:string):Observable<Statistics[]>{
+  return this.httpsvc.get<Statistics[]>(
+      this.rootURL+"list/"+language)
+}
 }

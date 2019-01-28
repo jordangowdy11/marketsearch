@@ -1,34 +1,19 @@
 import { Injectable } from '@angular/core';
-
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { Statistics } from "./stats";
 @Injectable({
   providedIn: 'root'
 })
-export class AwsService{
-
-  rootURL=""
-  constructor(private httpsvc:HttpClient) {
-    this.rootURL="http://localhost:9900/AwsServices"
+export class awsService{
+  rootURL:string
+  
+  constructor(private httpsvc:HttpClient){
+      this.rootURL="http://localhost:3990/"
   }
-    getAwsServices():Observable<AwsService[]> {
-      return this.httpsvc.get<AwsService[]>(this.rootURL+"/list") 
-    }
 
-    addNewAwsService(newAwsService:AwsService):Observable<AwsService>{
-      const httpOpts ={
-     headers: new HttpHeaders(
-       {'Content-Type':
-       'application/x-www-form-urlencoded;charset=UTF-8'})
-     }
- 
-     return this.httpsvc.post<AwsService>(
-       this.rootURL+"/register",reqBody,httpOpts)
-     }
-
-     deleteAwsService(productId:number):Observable<AwsService>{
-       return this.httpsvc.request<AwsService>('DELETE',this.rootURL+"/delete",
-      {
-        headers:new HttpHeaders({'Content-Type': 'text/plain'}),
-    body:productId
-        })
-     }
+getStatisticList(language:string):Observable<Statistics[]>{
+  return this.httpsvc.get<Statistics[]>(
+      this.rootURL+"list/"+language)
+}
 }

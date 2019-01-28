@@ -6,30 +6,14 @@ import { Observable } from 'rxjs';
 })
 export class MicrosoftService{
 
-  rootURL=""
-  constructor(private httpsvc:HttpClient) {
-    this.rootURL="http://localhost:9900/MicrosoftServices"
+  rootURL:string
+  
+  constructor(private httpsvc:HttpClient){
+      this.rootURL="http://localhost:3990/"
   }
-    getMicrosoftServices():Observable<MicrosoftService[]> {
-      return this.httpsvc.get<MicrosoftService[]>(this.rootURL+"/list") 
-    }
 
-    addNewMicrosoftService(newMicrosoftService:MicrosoftService):Observable<MicrosoftService>{
-      const httpOpts ={
-     headers: new HttpHeaders(
-       {'Content-Type':
-       'application/x-www-form-urlencoded;charset=UTF-8'})
-     }
- 
-     return this.httpsvc.post<MicrosoftService>(
-       this.rootURL+"/register",reqBody,httpOpts)
-     }
-
-     deleteProduct(productId:number):Observable<MicrosoftService>{
-       return this.httpsvc.request<MicrosoftService>('DELETE',this.rootURL+"/delete",
-      {
-        headers:new HttpHeaders({'Content-Type': 'text/plain'}),
-    body:productId
-        })
-     }
+getStatisticList(language:string):Observable<Statistics[]>{
+  return this.httpsvc.get<Statistics[]>(
+      this.rootURL+"list/"+language)
+}
 }
