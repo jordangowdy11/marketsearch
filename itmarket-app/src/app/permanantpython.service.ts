@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-
+import { HttpClient, HttpHeaders } from '../../node_modules/@angular/common/http';
+import { Observable } from '../../node_modules/rxjs';
 @Injectable({
   providedIn: 'root'
 })
@@ -7,7 +8,7 @@ export class PermanantpythonService{
 
   rootURL=""
   constructor(private httpsvc:HttpClient) {
-    this.rootURL="http://localhost:9900/products"
+    this.rootURL="http://localhost:9900/PermanantpythonService"
   }
     getPermanantpythonServices():Observable<PermanantpythonService[]> {
       return this.httpsvc.get<PermanantpythonService[]>(this.rootURL+"/list") 
