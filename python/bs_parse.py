@@ -26,7 +26,8 @@ while x < 36:
     x += 1
 
 csv_data = pd.np.array(list_of_data).reshape((len(list_of_data) // 3, 3))
-pd.DataFrame(csv_data, columns=column_titles).to_csv("js_data_rows.csv", index=False)
+pd.DataFrame(csv_data, columns=column_titles).to_csv("js_data_rows.csv", index=True)
+print("script run, file created")
 
 # pp.pprint(list_of_data)
 
