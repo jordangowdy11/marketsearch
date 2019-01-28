@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '../../node_modules/@angular/common/http';
-import { Observable } from '../../node_modules/rxjs';
-
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { sql } from "./sql";
 @Injectable({
   providedIn: 'root'
 })
@@ -22,6 +22,8 @@ export class SqlService{
        'application/x-www-form-urlencoded;charset=UTF-8'})
      }
  
+     var reqBody="location="+newSqlService.location+"&wage="+newSqlService.wage
+     
      return this.httpsvc.post<SqlService>(
        this.rootURL+"/register",reqBody,httpOpts)
      }

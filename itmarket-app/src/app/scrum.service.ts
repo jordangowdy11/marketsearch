@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '../../node_modules/@angular/common/http';
-import { Observable } from '../../node_modules/rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
@@ -20,16 +20,11 @@ export class ScrumService{
        {'Content-Type':
        'application/x-www-form-urlencoded;charset=UTF-8'})
      }
- 
+      var reqBody="location="+newScrumService.location+"&wage="+newScrumService.wage
      return this.httpsvc.post<ScrumService>(
        this.rootURL+"/register",reqBody,httpOpts)
      }
+     
 
-     deleteScrumService(productId:number):Observable<ScrumService>{
-       return this.httpsvc.request<ScrumService>('DELETE',this.rootURL+"/delete",
-      {
-        headers:new HttpHeaders({'Content-Type': 'text/plain'}),
-    body:productId
-        })
-     }
+
 }
