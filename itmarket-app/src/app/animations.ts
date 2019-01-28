@@ -58,7 +58,7 @@ import {
         ])
       ]),
       query(':enter', animateChild()),
-    ])  
+    ])
   ]);
 
  

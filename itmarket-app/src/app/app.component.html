@@ -28,7 +28,13 @@
 
 
 <!--animation on router outlet-->
+<!-- <div>
+  <router-outlet></router-outlet>
+</div> -->
 
-<router-outlet></router-outlet>
 
 </body>
+
+<div [@routeAnimations]="prepareRoute(outlet)">
+  <router-outlet #outlet="outlet"></router-outlet>
+</div>

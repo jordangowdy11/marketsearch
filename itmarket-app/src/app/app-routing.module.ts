@@ -26,8 +26,8 @@ import { PermanantdevopsComponent } from './permanantdevops/permanantdevops.comp
 import { PermanantawsComponent } from './permanantaws/permanantaws.component';
 
 const routes: Routes = [
-  {path:'permanent', component:PermanentComponent},
-  {path:'contract', component:ContractedComponent},
+  {path:'permanent', component:PermanentComponent, data: {animation: 'PermPage'}},
+  {path:'contract', component:ContractedComponent, data: {animation: 'ContractPage'}},
   {path:'contract/python',component:PythonComponent},
   {path:'contract/sql',component:SqlComponent},
   {path:'contract/javascript',component:JavaScriptComponent},
