@@ -30,9 +30,15 @@ app.get('/',(req,res)=>{
     console.log(message)
 })
 
-app.get('/permanent/list/js_data',(req,res) => {
+app.get('/permanent/list/:language',(req,res) => {
     var language = req.params.language
     var message =""
+        const requestedLanguage = req.param[language]
+    // pool.query('SELECT * FROM users WHERE language =?', language,(error,requestedLanguage) =>{
+    //     if(error) throw error;
+    //     response.send(requestedLanguage);
+    // });
+    
     
     MongoClient.connect('mongodb://localhost:27017/js_data',
         function (err,client){
@@ -45,7 +51,7 @@ app.get('/permanent/list/js_data',(req,res) => {
 
         var db = client.db('language_data')
 
-        db.collection('permanent').find("{language"+language+"}")
+        db.collection('js_data').find()
         .toArray(function(err,result){
             if(err) throw err
 
