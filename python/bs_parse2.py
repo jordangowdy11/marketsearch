@@ -1,4 +1,5 @@
-#beautifulsoup implementation
+W#beautifulsoup implementation
+
 import requests
 import pprint
 import json
@@ -6,12 +7,9 @@ from bs4 import BeautifulSoup
 import pandas as pd
 
 pp = pprint.PrettyPrinter()
-
-#jobswatch_url = "https://www.itjobswatch.co.uk/jobs/uk/python.do"
-#jobswatch_url = "https://www.itjobswatch.co.uk/jobs/uk/Javascript.do"
-jobswatch_url = "https://www.itjobswatch.co.uk/jobs/uk/microsoft.do"
+jobswatch_url = "https://www.itjobswatch.co.uk/jobs/uk/Javascript.do"
 column_titles = ('thisyeardata', 'lastyeardata', 'twoyearagodata')
-filename = "perm-microsoft.csv"
+filename = "js_rows.csv"
 row_length = 3
 
 make_request = requests.get(jobswatch_url)
