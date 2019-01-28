@@ -34,11 +34,11 @@ app.get('/permanent/list/:language',(req,res) => {
     var language = req.params.language
     var message =""
     
-    MongoClient.connect('mongodb://localhost:27017/it_marketdb',
+    MongoClient.connect('mongodb://localhost:27017/js_data',
         function (err,client){
             if(err) throw err
 
-        var db = client.db('it_marketdb')
+        var db = client.db('language_date')
 
         db.collection('permanent').find("{language"+language+"}")
         .toArray(function(err,result){

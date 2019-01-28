@@ -11,7 +11,7 @@ import {
 
   export const slideInAnimation =
   trigger('routeAnimations', [
-    transition('HomePage <=> AboutPage', [
+    transition('PermPage <=> ContractPage', [
       style({ position: 'relative' }),
       query(':enter, :leave', [
         style({

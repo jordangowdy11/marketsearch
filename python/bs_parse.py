@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 
 pp = pprint.PrettyPrinter()
 
-jobswatch_url = "https://www.itjobswatch.co.uk/jobs/uk/Javascript.do"
+jobswatch_url = "https://www.itjobswatch.co.uk/jobs/uk/python.do"
 
 make_request = requests.get(jobswatch_url)
 
