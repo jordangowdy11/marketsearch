@@ -14,11 +14,13 @@ import { HtmlComponent } from './html/html.component';
 import { ScrumComponent } from './scrum/scrum.component';
 import { DevopsComponent } from './devops/devops.component';
 import { AwsComponent } from './aws/aws.component';
+//we are only doing permanent at the mo!
 import { PermanantpythonComponent } from './permanantpython/permanantpython.component';
 import { PermanantsqlComponent } from './permanantsql/permanantsql.component';
 import { PermanantjavascriptComponent } from './permanantjavascript/permanantjavascript.component';
 import { PermanantcsharpComponent } from './permanantcsharp/permanantcsharp.component';
 import { PermanantmicrosoftComponent } from './permanantmicrosoft/permanantmicrosoft.component';
+//j do form here <permanent-language>
 import { PermanantjavaComponent } from './permanantjava/permanantjava.component';
 import { PermananthtmlComponent } from './permananthtml/permananthtml.component';
 import { PermanantscrumComponent } from './permanantscrum/permanantscrum.component';
