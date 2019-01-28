@@ -33,6 +33,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 })
 export class AppComponent {
   title = 'itmarket-app';
+
   constructor(private prjsvc:HTTPService){
 
   }
