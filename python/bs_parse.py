@@ -1,4 +1,5 @@
 #beautifulsoup implementation
+
 import requests
 import pprint
 import json
