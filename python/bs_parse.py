@@ -5,17 +5,17 @@ import json
 from bs4 import BeautifulSoup
 import pandas as pd
 
+
+
+
 pp = pprint.PrettyPrinter()
-<<<<<<< HEAD
 
 
 #jobswatch_url = "https://www.itjobswatch.co.uk/jobs/uk/python.do"
-jobswatch_url = "https://www.itjobswatch.co.uk/jobs/uk/Javascript.do"
-=======
-jobswatch_url = "https://www.itjobswatch.co.uk/jobs/uk/python.do"
->>>>>>> 747ee5b03b94b64725dfa9c7c819cf26b4d68f2c
+#jobswatch_url = "https://www.itjobswatch.co.uk/jobs/uk/Javascript.do"
+jobswatch_url = "https://www.itjobswatch.co.uk/jobs/uk/microsoft.do"
 column_titles = ('thisyeardata', 'lastyeardata', 'twoyearagodata')
-filename = "phyton_rows.csv"
+filename = "perm-microsoft.csv"
 row_length = 3
 
 make_request = requests.get(jobswatch_url)
@@ -32,16 +32,15 @@ while x < 36:
     x += 1
 
 csv_data = pd.np.array(list_of_data).reshape((len(list_of_data) // 3, 3))
-<<<<<<< HEAD
-pd.DataFrame(csv_data, columns=column_titles).to_csv("js_data_rows.csv", index=False)
+pd.DataFrame(csv_data, columns=column_titles).to_csv("perm-microsoft.csv", index=False)
 
-print("Enter Language:")
+print("CSV Created")
 input()
 
-=======
-pd.DataFrame(csv_data, columns=column_titles).to_csv("phyton_data_rows.csv", index=False)
-print("script ran yo")
->>>>>>> 747ee5b03b94b64725dfa9c7c819cf26b4d68f2c
+
+#input()
+#too lazy will just run as a script
+
 # pp.pprint(list_of_data)
 
 # file = open("Javascript.csv", "w+")

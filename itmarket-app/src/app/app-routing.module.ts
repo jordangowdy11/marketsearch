@@ -20,7 +20,7 @@ import { PermanantsqlComponent } from './permanantsql/permanantsql.component';
 import { PermanantjavascriptComponent } from './permanantjavascript/permanantjavascript.component';
 import { PermanantcsharpComponent } from './permanantcsharp/permanantcsharp.component';
 import { PermanantmicrosoftComponent } from './permanantmicrosoft/permanantmicrosoft.component';
-//j do form here <permanent-language>
+//j do form here <perm-language>
 import { PermanantjavaComponent } from './permanantjava/permanantjava.component';
 import { PermananthtmlComponent } from './permananthtml/permananthtml.component';
 import { PermanantscrumComponent } from './permanantscrum/permanantscrum.component';
