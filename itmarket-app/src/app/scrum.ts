@@ -1,4 +1,3 @@
 export interface scrum{
-    wage: number
-    location: String
+    language:String
 }

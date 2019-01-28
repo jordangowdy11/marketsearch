@@ -1,1 +1,3 @@
-permanant
+export interface permananthtml{
+    language:String
+}
