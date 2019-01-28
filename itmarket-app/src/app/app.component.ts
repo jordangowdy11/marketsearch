@@ -19,17 +19,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  // animations: [
-  //   slideInAnimation,
-  //   trigger,
-  //   state,
-  //   style,
-  //   animate,
-  //   transition,
-  //   query,
-  //   animateChild,
-  //   group
-  // ]
+  animations: [slideInAnimation]
 })
 export class AppComponent {
   title = 'itmarket-app';
