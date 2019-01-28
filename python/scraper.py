@@ -10,7 +10,7 @@ print("Scrapy script executed")
 pp = pprint.PrettyPrinter(indent=3)
 array = [ ] 
 # webpage = requests.get("https://www.itjobswatch.co.uk/jobs/uk/" + x + ".do")
-webpage = requests.get("https://www.itjobswatch.co.uk/jobs/uk/Javascript.do")
+webpage = requests.get("https://www.itjobswatch.co.uk/jobs/uk/python.do")
 website_byte_data = html.fromstring(webpage.content)
 
 website_figures = website_byte_data.xpath('//td[@class="fig"]/text()')
