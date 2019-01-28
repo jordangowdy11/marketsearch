@@ -9,7 +9,6 @@ import { HTTPService } from './http.service';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  
 })
 export class AppComponent {
   title = 'itmarket-app';
@@ -17,6 +16,7 @@ export class AppComponent {
   constructor(private prjsvc:HTTPService){
 
   }
+
   }
 
 

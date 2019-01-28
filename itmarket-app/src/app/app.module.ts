@@ -30,6 +30,7 @@ import { PermanantdevopsComponent } from './permanantdevops/permanantdevops.comp
 import { PermanantawsComponent } from './permanantaws/permanantaws.component';
 
 @NgModule({
+  
   declarations: [
     AppComponent,
     HtmlComponent,
