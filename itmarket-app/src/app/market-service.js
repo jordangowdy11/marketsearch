@@ -5,15 +5,15 @@ var bodyparser = require("body-parser")
 app.use(bodyparser.urlencoded({extended:false}))
 app.use(bodyparser.json())
 
-// var MongoClient = require('mongodb').MongoClient
+//var MongoClient = require('mongodb').MongoClient
 
-var langData = {
-    language:'Python',
-        statistics:[
-            {2019:10,2018:20,2017:30},
-            {2019:20,2018:30,2017:40}
-        ]
-}
+// var langData = {
+//     language:'Python',
+//         statistics:[
+//             {2019:10,2018:20,2017:30},
+//             {2019:20,2018:30,2017:40}
+//         ]
+// }
 
 
 app.use(function(req,res,next){
@@ -30,15 +30,15 @@ app.get('/',(req,res)=>{
     console.log(message)
 })
 
-app.get('/permanent/list/:language',(req,res) => {
+app.get('/permanent/list/js_data',(req,res) => {
     var language = req.params.language
     var message =""
     
-    MongoClient.connect('mongodb://localhost:27017/it_marketdb',
+    MongoClient.connect('mongodb://localhost:27017/language_data',
         function (err,client){
             if(err) throw err
 
-        var db = client.db('it_marketdb')
+        var db = client.db('language_data')
 
         db.collection('permanent').find("{language"+language+"}")
         .toArray(function(err,result){

@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Statistics } from './stats';
 import { HTTPService } from './http.service';
 
 
@@ -12,7 +11,7 @@ import { HTTPService } from './http.service';
 })
 export class AppComponent {
   title = 'itmarket-app';
-  stats: Statistics[]
+
   constructor(private prjsvc:HTTPService){
 
   }
