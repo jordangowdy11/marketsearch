@@ -3,7 +3,32 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class PermanantscrumService {
+export class PermanantscrumService{
 
-  constructor() { }
+  rootURL=""
+  constructor(private httpsvc:HttpClient) {
+    this.rootURL="http://localhost:9900/PermanantscrumServices"
+  }
+    getPermanantscrumServices():Observable<PermanantscrumService[]> {
+      return this.httpsvc.get<PermanantscrumService[]>(this.rootURL+"/list") 
+    }
+
+    addNewPermanantscrumService(newPermanantscrumService:PermanantscrumService):Observable<PermanantscrumService>{
+      const httpOpts ={
+     headers: new HttpHeaders(
+       {'Content-Type':
+       'application/x-www-form-urlencoded;charset=UTF-8'})
+     }
+ 
+     return this.httpsvc.post<PermanantscrumService>(
+       this.rootURL+"/register",reqBody,httpOpts)
+     }
+
+     deletePermanantscrumService(productId:number):Observable<PermanantscrumService>{
+       return this.httpsvc.request<PermanantscrumService>('DELETE',this.rootURL+"/delete",
+      {
+        headers:new HttpHeaders({'Content-Type': 'text/plain'}),
+    body:productId
+        })
+     }
 }
