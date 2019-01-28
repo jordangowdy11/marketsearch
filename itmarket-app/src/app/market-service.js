@@ -34,10 +34,10 @@ app.get('/permanent/list/:language',(req,res) => {
     var language = req.params.language
     var message =""
         const requestedLanguage = req.param[language]
-    pool.query('SELECT * FROM users WHERE language =?', language,(error,requestedLanguage) =>{
-        if(error) throw error;
-        response.send(requestedLanguage);
-    });
+    // pool.query('SELECT * FROM users WHERE language =?', language,(error,requestedLanguage) =>{
+    //     if(error) throw error;
+    //     response.send(requestedLanguage);
+    // });
     
     
     MongoClient.connect('mongodb://localhost:27017/language_data',
