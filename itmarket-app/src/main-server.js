@@ -28,6 +28,7 @@ app.get("/language_data/:language", (req,res) =>{
     })
   })
 })
+})})
 
 app.get('permanent/:language', function(req,res){
   res.send("language is set to "+req.param.language);
@@ -69,3 +70,4 @@ app.get('permanent/:language', function(req,res){
  app.listen(port, () => {
   console.log("Spooky mongo magic has begun hsdfsg ⊙﹏⊙");
 })
+
