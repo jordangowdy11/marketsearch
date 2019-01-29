@@ -25,8 +25,8 @@ app.get("/language_data/:language", (req,res) =>{
       console.log(stats)
       console.log(message)
       res.send(stats)
-
-
+    })
+  })
 })
 
 app.get('permanent/:language', function(req,res){
@@ -65,7 +65,7 @@ app.get('permanent/:language', function(req,res){
     })
   })
 
-//  //listen sits and patiently waits for http requests at defined port above, defined as 8080 atm
+ //listen sits and patiently waits for http requests at defined port above, defined as 8080 atm
  app.listen(port, () => {
   console.log("Spooky mongo magic has begun hsdfsg ⊙﹏⊙");
 })
