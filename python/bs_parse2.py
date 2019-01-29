@@ -1,20 +1,15 @@
-#beautifulsoup implementation
+W#beautifulsoup implementation
+
 import requests
 import pprint
 import json
 from bs4 import BeautifulSoup
 import pandas as pd
 
-# import os
-# from pymongo import MongoClient
-# client = MongoClient('mongodb://localhost:27017/')
-# db = client.language_data
-# collection = collection('perm-microsoft)
-
 pp = pprint.PrettyPrinter()
-jobswatch_url = "https://www.itjobswatch.co.uk/contracts/uk/amazon%20aws.do"
+jobswatch_url = "https://www.itjobswatch.co.uk/jobs/uk/Javascript.do"
 column_titles = ('thisyeardata', 'lastyeardata', 'twoyearagodata')
-filename = "cont-aws.csv"
+filename = "js_rows.csv"
 row_length = 3
 
 make_request = requests.get(jobswatch_url)
@@ -31,8 +26,9 @@ while x < 36:
     x += 1
 
 csv_data = pd.np.array(list_of_data).reshape((len(list_of_data) // 3, 3))
-pd.DataFrame(csv_data, columns=column_titles).to_csv("cont-aws.csv", index=False)
-print("data inserted")
+pd.DataFrame(csv_data, columns=column_titles).to_csv("js_data_rows.csv", index=True)
+print("script run, file created")
+
 # pp.pprint(list_of_data)
 
 # file = open("Javascript.csv", "w+")
