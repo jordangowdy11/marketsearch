@@ -44,7 +44,7 @@ app.get('/permanent/list/:language',(req,res) => {
         function (err,client){
             if(err) throw err
 
-        var db = client.db('language_date')
+        var db = client.db('language_data')
     MongoClient.connect('mongodb://localhost:27017/language_data',
         function (err,client){
             if(err) throw err
