@@ -24,17 +24,12 @@ app.get("/language_data/:language", (req,res) =>{
       message=stats.length+"Stats found for programming language"+language
       console.log(stats)
       console.log(message)
-      res.send(stats)
+      res.send("language is set to "+req.param.language);
     })
   })
 })
-})})
 
-app.get('permanent/:language', function(req,res){
-  res.send("language is set to "+req.param.language);
-})
-
-  //simple test request to make sure the server is replying and saying hello
+//simple test request to make sure the server is replying and saying hello
   app.get("/sayhello", (req, res) =>{
     var hello = "Hello There"
     res.send(hello)
