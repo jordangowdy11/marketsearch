@@ -25,10 +25,9 @@ app.get("/language_data/:language", (req,res) =>{
       console.log(stats)
       console.log(message)
       res.send(stats)
-
-
+  })
+ })
 })
-})})
 
 app.get('permanent/:language', function(req,res){
   res.send("language is set to "+req.param.language);

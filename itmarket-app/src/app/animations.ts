@@ -9,9 +9,11 @@ import {
     group
   } from '@angular/animations';
 
+  //Route animations back and forth between each component in the app
   export const slideInAnimation =
   trigger('routeAnimations', [
-    transition('PermPage <=> ContractPage', [
+    transition('PermPage <=> ContractPage, PermPage <=> PermPy, PermPage <=> PermSQL, PermPage <=> PermJS, PermPage <=> PermCSharp, PermPage <=> PermMS, PermPage <=> PermJava, PermPage <=> PermHtml,PermPage <=> PermScrum, PermPage <=> PermDevops, PermPage <=> PermAWS, ContractPage <=> ContPy, ContractPage <=> ContSQL, ContractPage <=> ContJS, ContractPage <=> ContCSharp, ContractPage <=> ContMS, ContractPage <=> ContJava, ContractPage <=> ContHtml, ContractPage <=> ContScrum, ContractPage <=> ContDevops, ContractPage <=> ContAWS',
+       [
       style({ position: 'relative' }),
       query(':enter, :leave', [
         style({
