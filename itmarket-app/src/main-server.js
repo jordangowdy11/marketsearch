@@ -20,9 +20,6 @@ app.get("/language_data/:language", (req,res) =>{
     var db = client.db("language_data");
     db.collection(language).find().toArray(function(err, result) {
       if (err) throw err
-      var stats = result[0].stats;
-      message=stats.length+"Stats found for programming language"+language
-      console.log(stats)
       console.log(message)
       res.send("language is set to "+req.param.language);
     })
