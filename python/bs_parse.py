@@ -11,18 +11,15 @@ import pandas as pd
 # db = client.language_data
 # collection = collection('perm-microsoft)
 
-<<<<<<< HEAD
 #jobswatch_url = "https://www.itjobswatch.co.uk/jobs/uk/python.do"
 #jobswatch_url = "https://www.itjobswatch.co.uk/jobs/uk/Javascript.do"
 jobswatch_url = "https://www.itjobswatch.co.uk/contracts/uk/csharp.do"
 column_titles = ('thisyeardata', 'lastyeardata', 'twoyearagodata')
 filename = "cont-csharp.csv"
-=======
 pp = pprint.PrettyPrinter()
 jobswatch_url = "https://www.itjobswatch.co.uk/contracts/uk/amazon%20aws.do"
 column_titles = ('thisyeardata', 'lastyeardata', 'twoyearagodata')
 filename = "cont-aws.csv"
->>>>>>> 17dbf93e2b557a0d85cb0c51ae49c60d4b93c6ed
 row_length = 3
 
 make_request = requests.get(jobswatch_url)
@@ -39,14 +36,11 @@ while x < 36:
     x += 1
 
 csv_data = pd.np.array(list_of_data).reshape((len(list_of_data) // 3, 3))
-<<<<<<< HEAD
 pd.DataFrame(csv_data, columns=column_titles).to_csv("cont-csharp.csv", index=True)
 print("script run, file created")
 
-=======
 pd.DataFrame(csv_data, columns=column_titles).to_csv("cont-aws.csv", index=False)
 print("data inserted")
->>>>>>> 17dbf93e2b557a0d85cb0c51ae49c60d4b93c6ed
 # pp.pprint(list_of_data)
 
 # file = open("Javascript.csv", "w+")

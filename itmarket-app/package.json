@@ -25,6 +25,8 @@
     "component": "^1.1.0",
     "core-js": "^2.5.4",
     "express": "^4.16.4",
+    "html2canvas": "^1.0.0-alpha.12",
+    "jspdf": "^1.5.3",
     "rxjs": "~6.3.3",
     "zone.js": "~0.8.26"
   },
@@ -35,6 +37,7 @@
     "@angular/language-service": "~7.0.0",
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",
+    "@types/jspdf": "^1.2.2",
     "@types/node": "~8.9.4",
     "codelyzer": "~4.5.0",
     "jasmine-core": "~2.99.1",
