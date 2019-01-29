@@ -28,6 +28,7 @@ import { PermanantpythonComponent } from './permanantpython/permanantpython.comp
 import { PermanantscrumComponent } from './permanantscrum/permanantscrum.component';
 import { PermanantdevopsComponent } from './permanantdevops/permanantdevops.component';
 import { PermanantawsComponent } from './permanantaws/permanantaws.component';
+import { SubscribeComponent } from './subscribe/subscribe.component';
 
 @NgModule({
   
@@ -54,7 +55,8 @@ import { PermanantawsComponent } from './permanantaws/permanantaws.component';
     PermanantpythonComponent,
     PermanantscrumComponent,
     PermanantdevopsComponent,
-    PermanantawsComponent
+    PermanantawsComponent,
+    SubscribeComponent
 
   ],
   imports: [
