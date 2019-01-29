@@ -39,14 +39,9 @@ while x < 36:
     x += 1
 
 csv_data = pd.np.array(list_of_data).reshape((len(list_of_data) // 3, 3))
-<<<<<<< HEAD
 pd.DataFrame(csv_data, columns=column_titles).to_csv("cont-csharp.csv", index=True)
 print("script run, file created")
 
-=======
-pd.DataFrame(csv_data, columns=column_titles).to_csv("cont-aws.csv", index=False)
-print("data inserted")
->>>>>>> 17dbf93e2b557a0d85cb0c51ae49c60d4b93c6ed
 # pp.pprint(list_of_data)
 
 # file = open("Javascript.csv", "w+")
