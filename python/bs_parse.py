@@ -5,10 +5,16 @@ import json
 from bs4 import BeautifulSoup
 import pandas as pd
 
+# import os
+# from pymongo import MongoClient
+# client = MongoClient('mongodb://localhost:27017/')
+# db = client.language_data
+# collection = collection('perm-microsoft)
+
 pp = pprint.PrettyPrinter()
-jobswatch_url = "https://www.itjobswatch.co.uk/jobs/uk/python.do"
+jobswatch_url = "https://www.itjobswatch.co.uk/jobs/uk/microsoft.do"
 column_titles = ('thisyeardata', 'lastyeardata', 'twoyearagodata')
-filename = "phyton_rows.csv"
+filename = "perm-microsoft.csv"
 row_length = 3
 
 make_request = requests.get(jobswatch_url)
@@ -25,8 +31,9 @@ while x < 36:
     x += 1
 
 csv_data = pd.np.array(list_of_data).reshape((len(list_of_data) // 3, 3))
-pd.DataFrame(csv_data, columns=column_titles).to_csv("phyton_data_rows.csv", index=False)
-print("script ran yo")
+pd.DataFrame(csv_data, columns=column_titles).to_csv("perm-microsoft.csv", index=False)
+
+# print("data inserted")
 # pp.pprint(list_of_data)
 
 # file = open("Javascript.csv", "w+")
