@@ -42,18 +42,6 @@ app.use(bodyParser.json());
     })
   })
 
-  // pp.get("/permanent/aws", (req, res) =>{
-  //   MongoClient.connect('mongodb://localhost:27017/language_data', function(err,client){
-  //     if(err) { throw err}
-  //     console.log("Connected on Request");
-  //     var db = client.db("language_data");
-  //     db.collection("perm_aws").find().toArray(function(err, result) {
-  //       console.log(result)
-  //       res.send(result)
-  //     })
-  //   })
-  // })
-
 //  //listen sits and patiently waits for http requests at defined port above, defined as 8080 atm
  app.listen(port, () => {
   console.log("Spooky mongo magic has begun hsdfsg ⊙﹏⊙");
