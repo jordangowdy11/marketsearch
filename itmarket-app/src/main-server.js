@@ -1,4 +1,3 @@
-
 const express = require("express");
 const app = express();
 const port = 8080;
@@ -17,8 +16,21 @@ app.use(bodyParser.json());
 //     console.log("Connected on Request");
 //     var db = client.db("language_data");
 
- 
+//     db.collection("csharp").find().toArray(function(err, result) {
+//       console.log(result)
+//       res.send(result);
+//     })
+//   })
+// })
 
+//simple test request to make sure the server is replying and saying hello
+  // app.get("/sayhello", (req, res) =>{
+  //   var hello = "Hello There"
+  //   res.send(hello)
+  // })
+
+  //this function makes a connection the the mongodb
+  //amazon_aws ayy
   app.get("/permanent/amazon_aws", (req, res) =>{
     MongoClient.connect('mongodb://localhost:27017/language_data', function(err,client){
       if(err) { throw err}
