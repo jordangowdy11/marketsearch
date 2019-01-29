@@ -24,13 +24,10 @@
     "bootstrap": "^4.2.1",
     "component": "^1.1.0",
     "core-js": "^2.5.4",
+    "cors": "^2.8.5",
     "express": "^4.16.4",
-<<<<<<< HEAD
-    "mongodb": "^3.1.13",
-=======
-    "html2canvas": "^1.0.0-alpha.12",
     "jspdf": "^1.5.3",
->>>>>>> fedeee08bb1258ab2268533d73b95e8a4af5bcc2
+    "mongodb": "^3.1.13",
     "rxjs": "~6.3.3",
     "zone.js": "~0.8.26"
   },
