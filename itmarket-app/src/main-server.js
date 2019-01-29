@@ -17,48 +17,8 @@ app.use(bodyParser.json());
 //     console.log("Connected on Request");
 //     var db = client.db("language_data");
 
-  MongoClient.connect('mongodb://localhost:27017/language_data', function(err,client){
-    if(err) { throw err}
-    console.log("Connected on Request");
-    var db = client.db("language_data");
-    db.collection(language).find().toArray(function(err, result) {
-      if (err) throw err
-      var stats = result[0].stats;
-      message=stats.length+"Stats found for programming language"+language
-      console.log(stats)
-      console.log(message)
-      res.send(stats)
-  })
- })
+ 
 
-
-app.get('permanent/:language', function(req,res){
-  res.send("language is set to "+req.param.language);
-})
-
-  //simple test request to make sure the server is replying and saying hello
-  app.get("/sayhello", (req, res) =>{
-    var hello = "Hello There"
-    res.send(hello)
-  })
-
-    //this function makes a connection the the mongodb
-  app.get("/permanent/aws", (req, res) =>{
-//     db.collection("csharp").find().toArray(function(err, result) {
-//       console.log(result)
-//       res.send(result);
-//     })
-//   })
-// })
-
-//simple test request to make sure the server is replying and saying hello
-  // app.get("/sayhello", (req, res) =>{
-  //   var hello = "Hello There"
-  //   res.send(hello)
-  // })
-
-  //this function makes a connection the the mongodb
-  //amazon_aws
   app.get("/permanent/amazon_aws", (req, res) =>{
     MongoClient.connect('mongodb://localhost:27017/language_data', function(err,client){
       if(err) { throw err}
