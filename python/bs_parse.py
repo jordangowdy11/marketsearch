@@ -9,9 +9,9 @@ pp = pprint.PrettyPrinter()
 
 #jobswatch_url = "https://www.itjobswatch.co.uk/jobs/uk/python.do"
 #jobswatch_url = "https://www.itjobswatch.co.uk/jobs/uk/Javascript.do"
-jobswatch_url = "https://www.itjobswatch.co.uk/jobs/uk/microsoft.do"
+jobswatch_url = "https://www.itjobswatch.co.uk/contracts/uk/csharp.do"
 column_titles = ('thisyeardata', 'lastyeardata', 'twoyearagodata')
-filename = "perm-microsoft.csv"
+filename = "cont-csharp.csv"
 row_length = 3
 
 make_request = requests.get(jobswatch_url)
@@ -28,7 +28,7 @@ while x < 36:
     x += 1
 
 csv_data = pd.np.array(list_of_data).reshape((len(list_of_data) // 3, 3))
-pd.DataFrame(csv_data, columns=column_titles).to_csv("js_data_rows.csv", index=True)
+pd.DataFrame(csv_data, columns=column_titles).to_csv("cont-csharp.csv", index=True)
 print("script run, file created")
 
 # pp.pprint(list_of_data)

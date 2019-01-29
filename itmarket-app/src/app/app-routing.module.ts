@@ -8,6 +8,7 @@ import { PythonComponent } from './python/python.component';
 import { SqlComponent } from './sql/sql.component';
 import { JavaScriptComponent } from './java-script/java-script.component';
 import { CSharpComponent } from './csharp/csharp.component';
+
 import { MicrosoftComponent } from './microsoft/microsoft.component';
 import { JavaComponent } from './java/java.component';
 import { HtmlComponent } from './html/html.component';
