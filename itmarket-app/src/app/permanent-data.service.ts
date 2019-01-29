@@ -13,7 +13,7 @@ export class PermanentDataService {
 
   constructor(private httpsvc: HttpClient) {
     this.rootURL ="http://localhost:8080/language_data"
-    this.pythonURL = "http://localhost:8080/python"
+    this.pythonURL = "http://localhost:8080/language_data/python"
    }
 
    //this is the base format for the data request, just replicate this for every language
