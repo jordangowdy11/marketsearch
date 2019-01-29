@@ -30,7 +30,7 @@ app.use(bodyParser.json());
   //   res.send(hello)
   // })
 
-    //this function makes a connection the the mongodb
+  //this function makes a connection the the mongodb
   //amazon_aws
   app.get("/permanent/amazon_aws", (req, res) =>{
     MongoClient.connect('mongodb://localhost:27017/language_data', function(err,client){
