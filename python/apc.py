@@ -22,13 +22,12 @@ def get_new_data(crawler_topic):
     tr_data = soup.find_all(class_="fig")
 
     x = 0
-    # while x < len(tr_data):
     while x < 36:
         list_of_data.append(tr_data[x].text.strip())
         x += 1
     csv_data = pd.np.array(list_of_data).reshape((len(list_of_data) // 3, 3))
     print(csv_data)
-    pd.DataFrame(csv_data, columns=column_titles).to_csv(crawler_topic + ".csv", index=False)
+    pd.DataFrame(csv_data, columns=column_titles).to_csv("/csvdata/" + crawler_topic + ".csv", index=False)
 
 if __name__ == "__main__":
     for x in crawler_topics:
