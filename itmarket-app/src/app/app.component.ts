@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { HTTPService } from './http.service';
+// import { HTTPService } from './http.service';
 import { RouterOutlet } from '../../node_modules/@angular/router';
 import { slideInAnimation } from './animations';
 import {
@@ -24,8 +24,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 export class AppComponent {
   title = 'itmarket-app';
 
-  constructor(private prjsvc:HTTPService){
+  // constructor(private prjsvc:HTTPService){
 
+  // }
+  constructor(){
+    
   }
 
  
