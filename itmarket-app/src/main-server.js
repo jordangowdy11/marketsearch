@@ -1,4 +1,3 @@
-
 const express = require("express");
 const app = express();
 const port = 8080;
@@ -17,9 +16,22 @@ app.use(bodyParser.json());
 //     console.log("Connected on Request");
 //     var db = client.db("language_data");
 
- 
+//     db.collection("csharp").find().toArray(function(err, result) {
+//       console.log(result)
+//       res.send(result);
+//     })
+//   })
+// })
 
-  app.get("/permanent/amazon_aws", (req, res) =>{
+//simple test request to make sure the server is replying and saying hello
+  // app.get("/sayhello", (req, res) =>{
+  //   var hello = "Hello There"
+  //   res.send(hello)
+  // })
+
+  //this function makes a connection the the mongodb
+  //amazon_aws ayy
+  app.get("/language_data/amazon_aws", (req, res) =>{
     MongoClient.connect('mongodb://localhost:27017/language_data', function(err,client){
       if(err) { throw err}
       console.log("Connected on Request");
@@ -31,7 +43,7 @@ app.use(bodyParser.json());
     })
   })
   //csharp
-  app.get("/permanent/csharp", (req, res) =>{
+  app.get("/language_data/csharp", (req, res) =>{
     MongoClient.connect('mongodb://localhost:27017/language_data', function(err,client){
       if(err) { throw err}
       console.log("Connected on Request");
@@ -43,7 +55,7 @@ app.use(bodyParser.json());
     })
   })
   //devops
-  app.get("/permanent/devops", (req, res) =>{
+  app.get("/language_data/devops", (req, res) =>{
     MongoClient.connect('mongodb://localhost:27017/language_data', function(err,client){
       if(err) { throw err}
       console.log("Connected on Request");
@@ -55,7 +67,7 @@ app.use(bodyParser.json());
     })
   })
   //html
-  app.get("/permanent/html", (req, res) =>{
+  app.get("/language_data/html", (req, res) =>{
     MongoClient.connect('mongodb://localhost:27017/language_data', function(err,client){
       if(err) { throw err}
       console.log("Connected on Request");
@@ -67,7 +79,7 @@ app.use(bodyParser.json());
     })
   })
   //java
-  app.get("/permanent/java", (req, res) =>{
+  app.get("/language_data/java", (req, res) =>{
     MongoClient.connect('mongodb://localhost:27017/language_data', function(err,client){
       if(err) { throw err}
       console.log("Connected on Request");
@@ -79,7 +91,7 @@ app.use(bodyParser.json());
     })
   })
   //javascript
-  app.get("/permanent/javascript", (req, res) =>{
+  app.get("/language_data/javascript", (req, res) =>{
     MongoClient.connect('mongodb://localhost:27017/language_data', function(err,client){
       if(err) { throw err}
       console.log("Connected on Request");
@@ -91,7 +103,7 @@ app.use(bodyParser.json());
     })
   })
   //microsoft
-  app.get("/permanent/microsoft", (req, res) =>{
+  app.get("/language_data/microsoft", (req, res) =>{
     MongoClient.connect('mongodb://localhost:27017/language_data', function(err,client){
       if(err) { throw err}
       console.log("Connected on Request");
@@ -103,7 +115,7 @@ app.use(bodyParser.json());
     })
   })
   //python
-  app.get("/permanent/python", (req, res) =>{
+  app.get("/language_data/python", (req, res) =>{
     MongoClient.connect('mongodb://localhost:27017/language_data', function(err,client){
       if(err) { throw err}
       console.log("Connected on Request");
@@ -115,7 +127,7 @@ app.use(bodyParser.json());
     })
   })
   //scrum
-  app.get("/permanent/scrum", (req, res) =>{
+  app.get("/language_data/scrum", (req, res) =>{
     MongoClient.connect('mongodb://localhost:27017/language_data', function(err,client){
       if(err) { throw err}
       console.log("Connected on Request");
@@ -127,7 +139,7 @@ app.use(bodyParser.json());
     })
   })
   //sql
-  app.get("/permanent/sql", (req, res) =>{
+  app.get("/language_data/sql", (req, res) =>{
     MongoClient.connect('mongodb://localhost:27017/language_data', function(err,client){
       if(err) { throw err}
       console.log("Connected on Request");
