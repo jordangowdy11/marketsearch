@@ -6,7 +6,6 @@ import { PermanentComponent } from './permanent/permanent.component';
 import { ContractedComponent } from './contracted/contracted.component';
 import { PythonComponent } from './python/python.component';
 import { SqlComponent } from './sql/sql.component';
-import { JavaScriptComponent } from './java-script/java-script.component';
 import { CSharpComponent } from './csharp/csharp.component';
 import { MicrosoftComponent } from './microsoft/microsoft.component';
 import { JavaComponent } from './java/java.component';
@@ -30,7 +29,6 @@ const routes: Routes = [
   {path:'contract', component:ContractedComponent, data: {animation: 'ContractPage'}},
   {path:'contract/python',component:PythonComponent},
   {path:'contract/sql',component:SqlComponent},
-  {path:'contract/javascript',component:JavaScriptComponent},
   {path:'contract/csharp',component:CSharpComponent},
   {path:'contract/microsoft',component:MicrosoftComponent},
   {path:'contract/java',component:JavaComponent},
