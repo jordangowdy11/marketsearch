@@ -9,5 +9,16 @@
     width: 400px;
     height: 700px;
     border: dashed red 1px;
-    float: right;
+    margin:  0 auto;    
 }
+
+.table_headings {
+    width: 400px;
+    height: 700px;
+    border: dashed red 1px;
+    margin: 0 auto;
+}
+
+/* .margin-from-top{
+    margin-top: 10%;
+} */
