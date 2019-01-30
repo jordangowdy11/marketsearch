@@ -14,7 +14,6 @@ import { AwsComponent } from './aws/aws.component';
 import { PermanentComponent } from './permanent/permanent.component';
 import { ContractedComponent } from './contracted/contracted.component';
 import { SqlComponent } from './sql/sql.component';
-import { JavaScriptComponent } from './java-script/java-script.component';
 import { CSharpComponent } from './csharp/csharp.component';
 import { MicrosoftComponent } from './microsoft/microsoft.component';
 import { JavaComponent } from './java/java.component';
@@ -43,7 +42,6 @@ import { JsComponent } from './js/js.component';
     PermanentComponent,
     ContractedComponent,
     SqlComponent,
-    JavaScriptComponent,
     CSharpComponent,
     MicrosoftComponent,
     JavaComponent,
