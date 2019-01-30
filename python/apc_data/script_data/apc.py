@@ -4,9 +4,7 @@ import pprint
 from bs4 import BeautifulSoup
 import pandas as pd
 import os
-import glob
 import datetime
-import shutil
 
 ##pprint formats terminal prints
 pp = pprint.PrettyPrinter()
@@ -54,33 +52,28 @@ def make_dir():
         except OSError as err:
             print(err)
 
-#locates all csv files an moves them into the file created in make_dir() fuction
-def find_csv_files():
-    current_date = datetime.datetime.now()
-    date = str(current_date.day) + "-"+ str(current_date.month) + "-"+ str(current_date.year)
-    new_dir = csv_folder + date
-    for file in glob.glob("*.csv"):
-        print(file)
-        shutil.move(file, new_dir)
-
-#runs the code below in the set order when executed as a script
 if __name__ == "__main__":
-    make_dir()
-       for x in crawler_topics:
-            get_new_data(x)
-        find_csv_files()
+    # make_dir()
+
+    for x in crawler_topics:
+        get_new_data(x)
+    # get_new_data(temp_topics)
 
 
-    # **** this is the if name == main body incase the script wants to be executed by a user and NOT autonomously 
-    # **** from a server side execution or something
-    #  
-    # delete_existing_folders = input(" Do you want to remove any existing data downloaded today? ")
-    # if delete_existing_folders == "y" || "Y":
-    #     make_dir()
-    #     for x in crawler_topics:
-    #         get_new_data(x)
-    #     find_csv_files()
-    # elif delete_existing_folders =="n" || "N":
-    #     print("Try running this script in a new directory or delete todays data")
-    # else:
-    #     print("Invalid input")
+#iterate all topics in the list, make get request, crawl table data, store data in files
+
+# for topic in crawler_topics:
+#     jobswatch_url = "https://www.itjobswatch.co.uk/jobs/uk/" + topic + ".do"
+#     print(jobswatch_url)
+#     get_request = requests.get(jobswatch_url)
+#     soup = BeautifulSoup(get_request.text, features="lxml")
+#     table_row_data = soup.find_all(class_="fig")
+
+#     x = 0
+#     while x < len(table_row_data):
+#         list_of_data.append(table_row_data[x].text.strip())
+#         x += 1
+#         csv_data = pd.np.array(list_of_data).reshape((len(list_of_data) // 3, 3))
+#         pd.DataFrame(csv_data, columns=column_titles).to_csv(jobswatch_url + ".csv", index=True)
+    # print(jobswatch_url)
+    # pp.pprint(list_of_data)

@@ -1,3 +1,43 @@
-<p>
-  js works!
-</p>
+<h1>
+  JavaScript</h1>
+<div class="table_list">
+  <table>
+    <tr> <b>Topics
+
+    </b></tr>
+    <tr>Rank</tr>
+    <tr>Rank change year-on-year</tr>
+    <tr>Permanent jobs citing JavaScript</tr>
+    <tr>As % of all permanent IT jobs advertised in the UK</tr>
+    <tr>As % of the Programming Languages category</tr>
+    <tr>Number of salaries quoted</tr>
+    <tr>UK median annual salary</tr>
+    <tr>Median salary % change year-on-year</tr>
+    <tr>10th Percentile</tr>
+    <tr>UK excluding London median annual salary</tr>
+    <tr>% change year-on-year</tr>
+    <tr>90th Percentile</tr>
+
+  </table>
+</div>
+
+<div class="table_data">
+  <table>
+    <tr>
+      <th>Statistics</th>
+      <th>6 months to 30 Jan 2019</th>
+      <th>Same period 2018</th>
+      <th>Same period 2017</th>
+    </tr>
+    <tr>
+
+
+    </tr>
+    <tr *ngFor="let d of document_data ">
+      
+      <td>{{d.thisyeardata}}</td>
+      <td>{{d.lastyeardata}}</td>
+      <td>{{d.twoyearagodata}}</td>
+    </tr>
+  </table>
+</div>
