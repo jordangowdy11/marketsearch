@@ -1,6 +1,4 @@
-<h1>
-  JavaScript</h1>
-<div class="table_list">
+<!-- <div class="table_list">
   <table>
     <tr> <b>Topics
 
@@ -19,25 +17,32 @@
     <tr>90th Percentile</tr>
 
   </table>
-</div>
-
-<div class="table_data">
+</div> -->
+<!-- <div class="table_headings">
   <table>
+    <tr *ngFor="let x of headings">
+      <td>{{x}}</td>
+    </tr>
+  </table>
+</div> -->
+  <div class="table_data">
+  <table class="table">
+    
     <tr>
       <th>Statistics</th>
       <th>6 months to 30 Jan 2019</th>
       <th>Same period 2018</th>
       <th>Same period 2017</th>
     </tr>
-    <tr>
+  
 
-
-    </tr>
-    <tr *ngFor="let d of document_data ">
-      
+ 
+    <tr *ngFor="let d of document_data; let x of headings">
+      <td>{{x}}</td>        
       <td>{{d.thisyeardata}}</td>
       <td>{{d.lastyeardata}}</td>
       <td>{{d.twoyearagodata}}</td>
     </tr>
+ 
   </table>
 </div>
