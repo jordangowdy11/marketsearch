@@ -66,6 +66,21 @@ def find_csv_files():
 #runs the code below in the set order when executed as a script
 if __name__ == "__main__":
     make_dir()
-    for x in crawler_topics:
-        get_new_data(x)
-    find_csv_files()
+       for x in crawler_topics:
+            get_new_data(x)
+        find_csv_files()
+
+
+    # **** this is the if name == main body incase the script wants to be executed by a user and NOT autonomously 
+    # **** from a server side execution or something
+    #  
+    # delete_existing_folders = input(" Do you want to remove any existing data downloaded today? ")
+    # if delete_existing_folders == "y" || "Y":
+    #     make_dir()
+    #     for x in crawler_topics:
+    #         get_new_data(x)
+    #     find_csv_files()
+    # elif delete_existing_folders =="n" || "N":
+    #     print("Try running this script in a new directory or delete todays data")
+    # else:
+    #     print("Invalid input")
