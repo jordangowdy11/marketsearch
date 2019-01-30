@@ -11,6 +11,7 @@ export class PermanantpythonComponent implements OnInit {
 
   ngOnInit() {
   }
+
   @ViewChild("content") content: ElementRef;
   public downloadPDF() {
     let doc = new jsPDF();
@@ -27,7 +28,7 @@ export class PermanantpythonComponent implements OnInit {
       'width': 190,
       elementHandlers: specialElementHandlers
     });
-    doc.save('permpython.pdf')
+    doc.save('permanent-python.pdf')
 
 
   }
