@@ -9,11 +9,13 @@ import { Permanent } from '../permanent';
 })
 export class JsComponent implements OnInit {
 
-  constructor(private permdataaccess : PermDataService) { }
+
+  constructor(private permdataaccess : PermDataService) {
+   }
 
     // permArray : Permanent = {thisyear:"", oneyearago:"",twoyearago:""}
     document_data=[{
-      thisyear:"firstvalue",oneyearago:"secondvalue",twoyearago:"thirdvalue"
+      thisyeardata:"firstvalue",lastyeardata:"secondvalue",twoyearagodata:"thirdvalue"
     }]
 
   ngOnInit() {

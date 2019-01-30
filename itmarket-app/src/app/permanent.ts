@@ -1,5 +1,5 @@
 export class Permanent {
-    thisyear: string;
-    oneyearago: string;
-    twoyearago: string;
+    thisyeardata: string;
+    lastyeardata: string;
+    twoyearagodata: string;
 }
