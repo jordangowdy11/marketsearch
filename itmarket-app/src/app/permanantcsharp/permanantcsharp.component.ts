@@ -10,16 +10,30 @@ import { PermDataService } from '../perm-data.service';
 export class PermanantcsharpComponent implements OnInit {
 
   constructor(private permdataaccess : PermDataService) { }
+
+  headings=[
+    "Rank",
+    "Rank change year on year",
+    "Permanent jobs citing",
+    "% of permanent jobs advertised for this skill",
+    "% of this skill in job categories",
+    "% of permanent jobs advertised for this skill",
+  ] 
+
+  headingsString = JSON.stringify(this.headings[1]);
+  
+
   document_data = [{
     thisyeardata:"firstvalue",
     lastyeardata:"secondvalue",
     twoyearagodata:"thirdvalue"
   }]
+
   ngOnInit() {
     this.permdataaccess.getCsharpData().subscribe( res => { this.document_data = res;
       this.document_data.forEach(element => {
         console.log(element);
-        
+        console.log(this.headingsString)
         })
       }
     )

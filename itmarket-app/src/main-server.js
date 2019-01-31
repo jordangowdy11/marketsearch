@@ -150,6 +150,17 @@ app.use(cors())
       })
     })
   })
+  app.get("/language_data/cont_amazon_aws", (req, res) =>{
+    MongoClient.connect('mongodb://localhost:27017/language_data', function(err,client){
+      if(err) { throw err}
+      console.log("Connected on Request");
+      var db = client.db("language_data");
+      db.collection("cont_amazon_aws").find().toArray(function(err, result) {
+        console.log(result)
+        res.send(result)
+      })
+    })
+  })
 
 
  //listen sits and patiently waits for http requests at defined port above, defined as 8080 atm
