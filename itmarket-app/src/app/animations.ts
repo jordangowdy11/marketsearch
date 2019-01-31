@@ -12,7 +12,7 @@ import {
   //Route animations back and forth between each component in the app
   export const slideInAnimation =
   trigger('routeAnimations', [
-    transition('PermPage <=> ContractPage, PermPage <=> PermPy, PermPage <=> PermSQL, PermPage <=> PermJS, PermPage <=> PermCSharp, PermPage <=> PermMS, PermPage <=> PermJava, PermPage <=> PermHtml,PermPage <=> PermScrum, PermPage <=> PermDevops, PermPage <=> PermAWS, ContractPage <=> ContPy, ContractPage <=> ContSQL, ContractPage <=> ContJS, ContractPage <=> ContCSharp, ContractPage <=> ContMS, ContractPage <=> ContJava, ContractPage <=> ContHtml, ContractPage <=> ContScrum, ContractPage <=> ContDevops, ContractPage <=> ContAWS, PermPy <=> PermSQL, PermPy <=> PermJS, PermPy <=> PermCSharp, PermPy <=> PermMS, PermPy <=> PermJava, PermPy <=> PermHtml, PermPy <=> PermScrum, PermPy <=> PermDevops, PermPy <=> PermAWS, PermSQL <=> PermJS, PermSQL <=> PermCSharp, PermSQL <=> PermMS, PermSQL <=> PermJava, PermSQL <=> PermHtml, PermSQL <=> PermScrum, PermSQL <=> PermDevops, PermSQL <=> PermAWS, PermJS <=> PermCSharp, PermJS <=> PermMS, PermJS <=> PermJava, PermJS <=> PermHtml, PermJS <=> PermScrum, PermJS <=> PermDevops, PermJS <=> PermAWS',
+    transition('PermPage <=> ContractPage, PermPage <=> PermPy, PermPage <=> PermSQL, PermPage <=> PermJS, PermPage <=> PermCSharp, PermPage <=> PermMS, PermPage <=> PermJava, PermPage <=> PermHtml,PermPage <=> PermScrum, PermPage <=> PermDevops, PermPage <=> PermAWS, ContractPage <=> ContPy, ContractPage <=> ContSQL, ContractPage <=> ContJS, ContractPage <=> ContCSharp, ContractPage <=> ContMS, ContractPage <=> ContJava, ContractPage <=> ContHtml, ContractPage <=> ContScrum, ContractPage <=> ContDevops, ContractPage <=> ContAWS, PermPy <=> PermSQL, PermPy <=> PermJS, PermPy <=> PermCSharp, PermPy <=> PermMS, PermPy <=> PermJava, PermPy <=> PermHtml, PermPy <=> PermScrum, PermPy <=> PermDevops, PermPy <=> PermAWS, PermSQL <=> PermJS, PermSQL <=> PermCSharp, PermSQL <=> PermMS, PermSQL <=> PermJava, PermSQL <=> PermHtml, PermSQL <=> PermScrum, PermSQL <=> PermDevops, PermSQL <=> PermAWS, PermJS <=> PermCSharp, PermJS <=> PermMS, PermJS <=> PermJava, PermJS <=> PermHtml, PermJS <=> PermScrum, PermJS <=> PermDevops, PermJS <=> PermAWS, PermCSharp <=> PermMS, PermCSharp <=> PermJava, PermCSharp <=> PermHtml, PermCSharp <=> PermScrum, PermCSharp <=> PermDevops, PermCSharp <=> PermAWS, PermMS <=> PermJava, PermMS <=> PermHtml, PermMS <=> PermScrum, PermMS <=> PermDevops, PermMS <=> PermAWS, PermJava <=> PermHtml, PermJava <=> PermScrum, PermJava <=> PermDevops, PermJava <=> PermAWS, PermHtml <=> PermScrum, PermHtml <=> PermDevops, PermHtml <=> PermAWS, PermScrum <=> PermDevops, PermScrum <=> PermAWS, PermDevops <=> PermAWS',
        [
       style({ position: 'relative' }),
       query(':enter, :leave', [
@@ -29,10 +29,10 @@ import {
       query(':leave', animateChild()),
       group([
         query(':leave', [
-          animate('300ms ease-out', style({ left: '100%'}))
+          animate('500ms ease-out', style({ left: '100%'}))
         ]),
         query(':enter', [
-          animate('300ms ease-out', style({ left: '0%'}))
+          animate('500ms ease-out', style({ left: '0%'}))
         ])
       ]),
       query(':enter', animateChild()),
@@ -53,10 +53,10 @@ import {
       query(':leave', animateChild()),
       group([
         query(':leave', [
-          animate('200ms ease-out', style({ left: '100%'}))
+          animate('300ms ease-out', style({ left: '100%'}))
         ]),
         query(':enter', [
-          animate('300ms ease-out', style({ left: '0%'}))
+          animate('400ms ease-out', style({ left: '0%'}))
         ])
       ]),
       query(':enter', animateChild()),

@@ -26,9 +26,12 @@
   </table>
 </div> -->
 
-<h1>Permanant JavaScript Roles</h1>
 
-<div class="col-md-9">
+<div class="col-md-9" id="content" #content>
+<h1>Permanant JavaScript Roles</h1>
+<button (click)="downloadPDF()" class="btn btn-sm btn-info">
+    <span class="	glyphicon glyphicon-download-alt"></span>
+    </button> 
     <ul class="nav nav-tabs">
         <li><a routerLink="/permanent/python">Python</a></li>
         <li><a routerLink="/permanent/sql">SQL</a></li>
@@ -40,7 +43,7 @@
         <li><a routerLink="/permanent/devops">DevOps</a></li>
         <li><a routerLink="/permanent/aws">AWS</a></li>
       </ul>
-    </div>
+
 
 <div class="col-md-9">
 <div class="table_data">
@@ -60,9 +63,11 @@
         <td>{{d.thisyeardata}}</td>
         <td>{{d.lastyeardata}}</td>
         <td>{{d.twoyearagodata}}</td>
+        <td><button (click)="addToLocal(d.thisyeardata, d.lastyeardata, d.twoyearagodata)">AddToList</button></td>
       </tr>
    
     </table>
+  </div>
   </div>
   </div>
   

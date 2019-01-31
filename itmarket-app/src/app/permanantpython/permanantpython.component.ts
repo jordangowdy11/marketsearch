@@ -17,6 +17,8 @@ export class PermanantpythonComponent implements OnInit {
     twoyearagodata:"thirdvalue"
   }]
 
+  
+  
 
   ngOnInit() {
     this.permdataaccess.getPythonData().subscribe( res => { this.document_data = res;
