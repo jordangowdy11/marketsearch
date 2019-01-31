@@ -14,7 +14,7 @@ export class JsComponent implements OnInit {
     //     {h1:"hola",h2:"",h3:"",h4:"",h5:"",h6:"",h7:"",h8:"",h9:"",h10:"",h11:"",h12:""}
     //   ]
      }
-  
+
   headings=[
     "Rank",
     "Rank change year on year",
@@ -23,8 +23,12 @@ export class JsComponent implements OnInit {
     "% of this skill in job categories",
     "% of permanent jobs advertised for this skill",
   ]
+  
+   
 
-  headingsString = JSON.stringify(this.headings[0]);
+  
+  
+  headingsString = JSON.stringify(this.headings);
 
   contract_document_data = [{
     thisyeardata:"firstvalue",
