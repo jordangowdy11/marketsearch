@@ -66,9 +66,9 @@ def find_csv_files():
 #runs the code below in the set order when executed as a script
 if __name__ == "__main__":
     make_dir()
-       for x in crawler_topics:
-            get_new_data(x)
-        find_csv_files()
+    for x in crawler_topics:
+        get_new_data(x)
+    find_csv_files()
 
 
     # **** this is the if name == main body incase the script wants to be executed by a user and NOT autonomously 

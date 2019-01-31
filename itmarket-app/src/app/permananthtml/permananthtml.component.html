@@ -7,3 +7,28 @@
 <p>
   Permanent employees, regular employees or the directly employed, work for an employer and are paid directly by that employer. Permanent (regular) employees do not have a predetermined end date to employment. In addition to their wages, they often receive benefits like subsidized health care, paid vacations, holidays, sick time, or contributions to a 401(k) retirement plan. Permanent employees are often eligible to switch job positions within their companies. Even when employment is "at will", permanent employees of large companies are generally protected from abrupt job termination by severance policies, like advance notice in case of layoffs, or formal discipline procedures. They may be eligible to join a union, and may enjoy both social and financial benefits of their employment.
 </p>
+
+<div class="col-md-9">
+    <div class="table_data">
+        <table class="table table-striped table-dark">
+          
+          <tr>
+            <th>Statistics</th>
+            <th>6 months to 30 Jan 2019</th>
+            <th>Same period 2018</th>
+            <th>Same period 2017</th>
+          </tr>
+        
+      
+       
+          <tr *ngFor="let d of document_data; let x of headings">
+            <td>{{x}}</td>        
+            <td>{{d.thisyeardata}}</td>
+            <td>{{d.lastyeardata}}</td>
+            <td>{{d.twoyearagodata}}</td>
+          </tr>
+       
+        </table>
+      </div>
+      </div>
+      

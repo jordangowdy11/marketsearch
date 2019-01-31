@@ -24,28 +24,29 @@ import { PermanantscrumComponent } from './permanantscrum/permanantscrum.compone
 import { PermanantdevopsComponent } from './permanantdevops/permanantdevops.component';
 import { PermanantawsComponent } from './permanantaws/permanantaws.component';
 
+
 const routes: Routes = [
   {path:'permanent', component:PermanentComponent, data: {animation: 'PermPage'}},
   {path:'contract', component:ContractedComponent, data: {animation: 'ContractPage'}},
-  {path:'contract/python',component:PythonComponent},
-  {path:'contract/sql',component:SqlComponent},
-  {path:'contract/csharp',component:CSharpComponent},
-  {path:'contract/microsoft',component:MicrosoftComponent},
-  {path:'contract/java',component:JavaComponent},
-  {path:'contract/html',component:HtmlComponent},
-  {path:'contract/scrum',component:ScrumComponent},
-  {path:'contract/devops',component:DevopsComponent},
-  {path:'contract/aws',component:AwsComponent},
-  {path:'permanent/python',component:PermanantpythonComponent},
-  {path:'permanent/sql',component:PermanantsqlComponent},
-  {path:'permanent/javascript',component:PermanantjavascriptComponent},
-  {path:'permanent/csharp',component:PermanantcsharpComponent},
-  {path:'permanent/microsoft',component:PermanantmicrosoftComponent},
-  {path:'permanent/java',component:PermanantjavaComponent},
-  {path:'permanent/html',component:PermananthtmlComponent},
-  {path:'permanent/scrum',component:PermanantscrumComponent},
-  {path:'permanent/devops',component:PermanantdevopsComponent},
-  {path:'permanent/aws',component:PermanantawsComponent}
+  {path:'contract/python',component:PythonComponent, data: {animation: 'ContPy'}},
+  {path:'contract/sql',component:SqlComponent, data: {animation: 'ContSQL'}},
+  {path:'contract/csharp',component:CSharpComponent, data: {animation: 'ContCSharp'}},
+  {path:'contract/microsoft',component:MicrosoftComponent, data: {animation: 'ContMS'}},
+  {path:'contract/java',component:JavaComponent, data: {animation: 'ContJava'}},
+  {path:'contract/html',component:HtmlComponent, data: {animation: 'ContHtml'}},
+  {path:'contract/scrum',component:ScrumComponent, data: {animation: 'ContScrum'}},
+  {path:'contract/devops',component:DevopsComponent, data: {animation: 'ContDevops'}},
+  {path:'contract/aws',component:AwsComponent, data: {animation: 'ContAWS'}},
+  {path:'permanent/python',component:PermanantpythonComponent, data: {animation: 'PermPy'}},
+  {path:'permanent/sql',component:PermanantsqlComponent, data: {animation: 'PermSQL'}},
+  {path:'permanent/javascript',component:PermanantjavascriptComponent, data: {animation: 'PermJS'}},
+  {path:'permanent/csharp',component:PermanantcsharpComponent, data: {animation: 'PermCSharp'}},
+  {path:'permanent/microsoft',component:PermanantmicrosoftComponent, data: {animation: 'PermMS'}},
+  {path:'permanent/java',component:PermanantjavaComponent, data: {animation: 'PermJava'}},
+  {path:'permanent/html',component:PermananthtmlComponent, data: {animation: 'PermHtml'}},
+  {path:'permanent/scrum',component:PermanantscrumComponent, data: {animation: 'PermScrum'}},
+  {path:'permanent/devops',component:PermanantdevopsComponent, data: {animation: 'PermDevops'}},
+  {path:'permanent/aws',component:PermanantawsComponent, data: {animation: 'PermAWS'}}
 ];
 
 @NgModule({
