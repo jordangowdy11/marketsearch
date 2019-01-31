@@ -1,32 +1,3 @@
-<!-- <div class="table_list">
-  <table>
-    <tr> <b>Topics
-
-    </b></tr>
-    <tr>Rank</tr>
-    <tr>Rank change year-on-year</tr>
-    <tr>Permanent jobs citing JavaScript</tr>
-    <tr>As % of all permanent IT jobs advertised in the UK</tr>
-    <tr>As % of the Programming Languages category</tr>
-    <tr>Number of salaries quoted</tr>
-    <tr>UK median annual salary</tr>
-    <tr>Median salary % change year-on-year</tr>
-    <tr>10th Percentile</tr>
-    <tr>UK excluding London median annual salary</tr>
-    <tr>% change year-on-year</tr>
-    <tr>90th Percentile</tr>
-
-  </table>
-</div> -->
-<!-- <div class="table_headings">
-  <table>
-    <tr *ngFor="let x of headings">
-      <td>{{x}}</td>
-    </tr>
-  </table>
-</div> -->
-
-
 <div class="col-md-9" id="content" #content>
 <h1>Permanant JavaScript Roles</h1>
 <button (click)="downloadPDF()" class="btn btn-sm btn-info">
@@ -65,7 +36,6 @@
         <td>{{d.twoyearagodata}}</td>
         <td><button (click)="addToLocal(d.thisyeardata, d.lastyeardata, d.twoyearagodata)">AddToList</button></td>
       </tr>
-   
     </table>
   </div>
   </div>

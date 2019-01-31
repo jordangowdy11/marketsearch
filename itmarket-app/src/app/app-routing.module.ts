@@ -23,6 +23,7 @@ import { PermananthtmlComponent } from './permananthtml/permananthtml.component'
 import { PermanantscrumComponent } from './permanantscrum/permanantscrum.component';
 import { PermanantdevopsComponent } from './permanantdevops/permanantdevops.component';
 import { PermanantawsComponent } from './permanantaws/permanantaws.component';
+import { JsComponent } from './js/js.component';
 
 
 const routes: Routes = [
@@ -32,6 +33,7 @@ const routes: Routes = [
   {path:'contract/sql',component:SqlComponent, data: {animation: 'ContSQL'}},
   {path:'contract/csharp',component:CSharpComponent, data: {animation: 'ContCSharp'}},
   {path:'contract/microsoft',component:MicrosoftComponent, data: {animation: 'ContMS'}},
+  {path:'contract/javascript',component:JsComponent, data: {animation: 'ConntJS'}}, 
   {path:'contract/java',component:JavaComponent, data: {animation: 'ContJava'}},
   {path:'contract/html',component:HtmlComponent, data: {animation: 'ContHtml'}},
   {path:'contract/scrum',component:ScrumComponent, data: {animation: 'ContScrum'}},
