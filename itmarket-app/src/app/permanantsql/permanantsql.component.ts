@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import * as jsPDF from 'jspdf';
+import { PermDataService } from '../perm-data.service';
 @Component({
   selector: 'app-permanantsql',
   templateUrl: './permanantsql.component.html',
@@ -7,9 +8,21 @@ import * as jsPDF from 'jspdf';
 })
 export class PermanantsqlComponent implements OnInit {
 
-  constructor() { }
+  constructor(private permdataaccess : PermDataService) { }
 
+  document_data = [{
+    thisyeardata:"firstvalue",
+    lastyeardata:"secondvalue",
+    twoyearagodata:"thirdvalue"
+  }]
   ngOnInit() {
+    this.permdataaccess.getSqlData().subscribe( res => { this.document_data = res;
+      this.document_data.forEach(element => {
+        console.log(element);
+        
+        })
+      }
+    )
   }
 
   @ViewChild("content") content: ElementRef;

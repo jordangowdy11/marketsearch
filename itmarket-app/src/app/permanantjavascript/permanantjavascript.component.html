@@ -1,18 +1,55 @@
+<!-- <div class="table_list">
+  <table>
+    <tr> <b>Topics
+
+    </b></tr>
+    <tr>Rank</tr>
+    <tr>Rank change year-on-year</tr>
+    <tr>Permanent jobs citing JavaScript</tr>
+    <tr>As % of all permanent IT jobs advertised in the UK</tr>
+    <tr>As % of the Programming Languages category</tr>
+    <tr>Number of salaries quoted</tr>
+    <tr>UK median annual salary</tr>
+    <tr>Median salary % change year-on-year</tr>
+    <tr>10th Percentile</tr>
+    <tr>UK excluding London median annual salary</tr>
+    <tr>% change year-on-year</tr>
+    <tr>90th Percentile</tr>
+
+  </table>
+</div> -->
+<!-- <div class="table_headings">
+  <table>
+    <tr *ngFor="let x of headings">
+      <td>{{x}}</td>
+    </tr>
+  </table>
+</div> -->
+
+<h1>Permanant JavaScript Roles</h1>
+
+
 <div class="col-md-9">
-  <h1>Permanant Java-Script Roles</h1>
+<div class="table_data">
+    <table class="table table-striped table-dark">
+      
+      <tr>
+        <th>Statistics</th>
+        <th>6 months to 30 Jan 2019</th>
+        <th>Same period 2018</th>
+        <th>Same period 2017</th>
+      </tr>
+    
   
-  <p>JavaScript, often abbreviated as JS, is a high-level, interpreted programming language that conforms to the ECMAScript specification. It is a language that is also characterized as dynamic, weakly typed, prototype-based and multi-paradigm.</p>
-  <p>average salary outside and inside of London(print from mongo)</p> 
-  <p>Year on Year statistics</p>
-  
+   
+      <tr *ngFor="let d of document_data; let x of headings">
+        <td>{{x}}</td>        
+        <td>{{d.thisyeardata}}</td>
+        <td>{{d.lastyeardata}}</td>
+        <td>{{d.twoyearagodata}}</td>
+      </tr>
+   
+    </table>
   </div>
-
-<table class="table">
-
-<th>Location</th>
-<th>6 Months to 25 Jan 2019</th>
-<th>Same Period 2018</th>
-<th>Same Period </th>
-
-
-</table>
+  </div>
+  

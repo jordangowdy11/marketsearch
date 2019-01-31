@@ -11,12 +11,27 @@
   
   </div>
 
-<table class="table">
+<div class="col-md-9">
+    <div class="table_data">
+        <table class="table">
 
-<th>Location</th>
-<th>6 Months to 25 Jan 2019</th>
-<th>Same Period 2018</th>
-<th>Same Period </th>
+            <tr>
+                <th>Statistics</th>
+                <th>6 months to 30 Jan 2019</th>
+                <th>Same period 2018</th>
+                <th>Same period 2017</th>
+            </tr>
 
 
-</table>
+
+            <tr *ngFor="let d of document_data; let x of headings">
+                <td>{{x}}</td>
+                <td>{{d.thisyeardata}}</td>
+                <td>{{d.lastyeardata}}</td>
+                <td>{{d.twoyearagodata}}</td>
+            </tr>
+
+        </table>
+    </div>
+</div>
+          
