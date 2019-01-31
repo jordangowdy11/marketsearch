@@ -21,6 +21,7 @@ column_titles = ('thisyeardata', 'lastyeardata', 'twoyearagodata')
 list_of_data = []
 
 csv_folder = "stored_csv_"
+csv_contract_folder = "stored_contract_csv_"
 
 def get_new_data(crawler_topic):
     print(crawler_topic)
@@ -31,6 +32,23 @@ def get_new_data(crawler_topic):
 
     x = 0
     while x < 36:
+        list_of_data.append(tr_data[x].text.strip())
+        x += 1
+        if x == 36:
+            csv_data = pd.np.array(list_of_data).reshape((len(list_of_data) // 3, 3))
+            print(csv_data)
+            pd.DataFrame(csv_data, columns=column_titles).to_csv(crawler_topic + ".csv", index=False)
+            list_of_data.clear()
+
+def get_new_contract_data(crawler_topic):
+    print(crawler_topic)
+    jobswatch_url = "https://www.itjobswatch.co.uk/contracts/uk/" + crawler_topic + ".do"
+    get_request = requests.get(jobswatch_url)
+    soup = BeautifulSoup(get_request.text, features="lxml")
+    tr_data = soup.find_all(class_="fig")
+
+    x = 0
+    while x < 57:
         list_of_data.append(tr_data[x].text.strip())
         x += 1
         if x == 36:
@@ -54,6 +72,18 @@ def make_dir():
         except OSError as err:
             print(err)
 
+def make_contract_dir():
+    current_date = datetime.datetime.now()
+    date = str(current_date.day) + "-"+ str(current_date.month) + "-"+ str(current_date.year)
+    new_dir = csv_contract_folder + date
+    if os.path.isdir(new_dir):
+        print("Exists")
+    else:
+        try:    
+            os.makedirs(new_dir)
+        except OSError as err:
+            print(err)
+
 #locates all csv files an moves them into the file created in make_dir() fuction
 def find_csv_files():
     current_date = datetime.datetime.now()
@@ -63,12 +93,26 @@ def find_csv_files():
         print(file)
         shutil.move(file, new_dir)
 
+def find_contract_csv_files():
+    current_date = datetime.datetime.now()
+    date = str(current_date.day) + "-"+ str(current_date.month) + "-"+ str(current_date.year)
+    new_dir = csv_contract_folder + date
+    for file in glob.glob("*.csv"):
+        print(file)
+        shutil.move(file, new_dir)
+
+
 #runs the code below in the set order when executed as a script
 if __name__ == "__main__":
-    make_dir()
-       for x in crawler_topics:
-            get_new_data(x)
-        find_csv_files()
+    make_contract_dir()
+    # make_dir()
+    # for x in crawler_topics:
+    #     get_new_data(x)
+    # find_csv_files()
+    for x in crawler_topics:
+        get_new_contract_data(x)       
+    find_contract_csv_files()
+    #     
 
 
     # **** this is the if name == main body incase the script wants to be executed by a user and NOT autonomously 
