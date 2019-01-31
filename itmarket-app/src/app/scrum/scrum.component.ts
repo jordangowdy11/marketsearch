@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import * as jsPDF from 'jspdf';
+import { ContractDataService } from '../contract-data.service';
 
 @Component({
   selector: 'app-scrum',
@@ -8,9 +9,32 @@ import * as jsPDF from 'jspdf';
 })
 export class ScrumComponent implements OnInit {
 
-  constructor() { }
+  constructor(private contdataacess : ContractDataService) { }
+
+  headings=[
+    "Rank",
+    "Rank change year on year",
+    "Permanent jobs citing",
+    "% of permanent jobs advertised for this skill",
+    "% of this skill in job categories",
+    "% of permanent jobs advertised for this skill",
+  ] 
+  headingsString = JSON.stringify(this.headings[0]);
+
+  contract_document_data = [{
+    thisyeardata:"firstvalue",
+    lastyeardata:"secondvalue",
+    twoyearagodata:"thirdvalue"
+  }]
 
   ngOnInit() {
+    this.contdataacess.getContScrumData().subscribe( res => { this.contract_document_data = res;
+      this.contract_document_data.forEach(element => {
+        console.log(element);
+        console.log(this.headingsString)
+        })
+      }
+    )
   }
   
   @ViewChild("content") content: ElementRef;
@@ -29,7 +53,7 @@ export class ScrumComponent implements OnInit {
       'width': 190,
       elementHandlers: specialElementHandlers
     });
-    doc.save('contracted-scrum.pdf')
+    doc.save('contract-scrum.pdf')
 
 
   }
