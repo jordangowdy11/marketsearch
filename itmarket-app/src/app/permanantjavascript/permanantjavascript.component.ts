@@ -29,7 +29,7 @@ export class PermanantjavascriptComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.permdataaccess.getJavascriptData().subscribe( res => { this.document_data = res;
+    this.permdataaccess.getPermDocumentData("javascript").subscribe( res => { this.document_data = res;
       this.document_data.forEach(element => {
         console.log(element);
         

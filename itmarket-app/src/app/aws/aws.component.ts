@@ -28,7 +28,7 @@ export class AwsComponent implements OnInit {
   }]
 
   ngOnInit() {
-    this.contdataacess.getContAwsData().subscribe( res => { this.contract_document_data = res;
+    this.contdataacess.getContractDocumentData("cont_amazon_aws").subscribe( res => { this.contract_document_data = res;
       this.contract_document_data.forEach(element => {
         console.log(element);
         console.log(this.headingsString)

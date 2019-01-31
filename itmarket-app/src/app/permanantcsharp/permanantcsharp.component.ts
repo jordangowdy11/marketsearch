@@ -30,7 +30,7 @@ export class PermanantcsharpComponent implements OnInit {
   }]
 
   ngOnInit() {
-    this.permdataaccess.getCsharpData().subscribe( res => { this.document_data = res;
+    this.permdataaccess.getPermDocumentData("csharp").subscribe( res => { this.document_data = res;
       this.document_data.forEach(element => {
         console.log(element);
         console.log(this.headingsString)

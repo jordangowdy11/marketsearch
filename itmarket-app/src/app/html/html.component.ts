@@ -28,7 +28,7 @@ export class HtmlComponent implements OnInit {
   }]
 
   ngOnInit() {
-    this.contdataacess.getContHtmlData().subscribe( res => { this.contract_document_data = res;
+    this.contdataacess.getContractDocumentData("cont_html").subscribe( res => { this.contract_document_data = res;
       this.contract_document_data.forEach(element => {
         console.log(element);
         console.log(this.headingsString)

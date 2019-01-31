@@ -19,7 +19,8 @@ export class PythonComponent implements OnInit {
     "% of this skill in job categories",
     "% of permanent jobs advertised for this skill",
   ] 
-  headingsString = JSON.stringify(this.headings[0]);
+  headingsString = JSON.stringify(this.headings);
+
 
   contract_document_data = [{
     thisyeardata:"firstvalue",
@@ -28,13 +29,14 @@ export class PythonComponent implements OnInit {
   }]
 
   ngOnInit() {
-    this.contdataacess.getContPythonData().subscribe( res => { this.contract_document_data = res;
+    this.contdataacess.getContractDocumentData("cont_python").subscribe( res => { this.contract_document_data = res;
       this.contract_document_data.forEach(element => {
         console.log(element);
         console.log(this.headingsString)
         })
       }
     )
+    console.log(this.headingsString)
   }
   @ViewChild("content") content: ElementRef;
   public downloadPDF() {

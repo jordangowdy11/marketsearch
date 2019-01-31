@@ -28,7 +28,7 @@ export class ScrumComponent implements OnInit {
   }]
 
   ngOnInit() {
-    this.contdataacess.getContScrumData().subscribe( res => { this.contract_document_data = res;
+    this.contdataacess.getContractDocumentData("cont_scrum").subscribe( res => { this.contract_document_data = res;
       this.contract_document_data.forEach(element => {
         console.log(element);
         console.log(this.headingsString)

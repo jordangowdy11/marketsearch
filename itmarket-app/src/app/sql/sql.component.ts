@@ -28,7 +28,7 @@ export class SqlComponent implements OnInit {
   }]
 
   ngOnInit() {
-    this.contdataacess.getContSqlData().subscribe( res => { this.contract_document_data = res;
+    this.contdataacess.getContractDocumentData("cont_sql").subscribe( res => { this.contract_document_data = res;
       this.contract_document_data.forEach(element => {
         console.log(element);
         console.log(this.headingsString)

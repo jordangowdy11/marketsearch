@@ -18,7 +18,7 @@ export class PermanantmicrosoftComponent implements OnInit {
   }]
 
   ngOnInit() {
-    this.permdataaccess.getMicrosoftData().subscribe( res => { this.document_data = res;
+    this.permdataaccess.getPermDocumentData("microsoft").subscribe( res => { this.document_data = res;
       this.document_data.forEach(element => {
         console.log(element);
         
