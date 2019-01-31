@@ -7,12 +7,49 @@
   
   </div>
 
-<table class="table">
+  <div class="col-md-9" id="content" #content>
+      <button (click)="downloadPDF()" class="btn btn-sm btn-info">Download Data
+          <span class="	glyphicon glyphicon-download-alt"></span>
+        </button>
+    
+    
+      
+      </div>
+      <div class="col-md-9">
+          <ul class="nav nav-tabs">
+              <li><a routerLink="/contract/python">Python</a></li>
+              <li><a routerLink="/contract/sql">SQL</a></li>
+              <li><a routerLink="/contract/javascript">Java-Script</a></li>
+              <li><a routerLink="/contract/csharp">C#</a></li>
+              <li><a routerLink="/contract/microsoft">Microsoft</a></li>
+              <li><a routerLink="/contract/html">HTML</a></li>
+              <li><a routerLink="/contract/scrum">Scrum</a></li>
+              <li><a routerLink="/contract/devops">DevOps</a></li>
+              <li><a routerLink="/contract/aws">AWS</a></li>
+            </ul>
+          </div>
 
-<th>Location</th>
-<th>6 Months to 25 Jan 2019</th>
-<th>Same Period 2018</th>
-<th>Same Period </th>
-
-
-</table>
+      <div class="col-md-9">
+          <div class="table_data">
+            <table class="table">
+          
+              <tr>
+                <th>Statistics</th>
+                <th>6 months to 30 Jan 2019</th>
+                <th>Same period 2018</th>
+                <th>Same period 2017</th>
+              </tr>
+          
+          
+          
+              <tr *ngFor="let d of contract_document_data; let x of headingsString">
+                <td>{{headingsString}}</td>
+                <td>{{d.thisyeardata}}</td>
+                <td>{{d.lastyeardata}}</td>
+                <td>{{d.twoyearagodata}}</td>
+              </tr>
+          
+            </table>
+          </div>
+          </div>
+    
