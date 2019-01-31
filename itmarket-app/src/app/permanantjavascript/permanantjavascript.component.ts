@@ -14,7 +14,20 @@ export class PermanantjavascriptComponent implements OnInit {
   indexValue : number;
   indexString: string;
   localStorageIndexName : string;
-
+  headings=[
+    "Rank",
+    "Rank change year on year",
+    "% of permanent jobs advertised for this skill",
+    "Permanent jobs citing",
+    "% of this skill in job categories",
+    "Number of Salaries Quoted",
+    "UK Median annual Salary",
+    "10th Percentile",
+    "Median Salary % change year on year",
+    "90th Percentile",
+    "UK Excluding London Median Annual Salary",
+    "% Change year on year"
+  ]
   document_data = [{
     thisyeardata:"firstvalue",
     lastyeardata:"secondvalue",

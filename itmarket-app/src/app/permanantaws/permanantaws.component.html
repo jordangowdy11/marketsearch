@@ -1,6 +1,8 @@
-<div class="col-md-9">
-  <h1>Permanant AWS Roles</h1>
-</div>
+<div class="col-md-9" id="content" #content>
+    <h1>Permanant AWS Roles</h1>
+    <button (click)="downloadPDF()" class="btn btn-sm btn-info">
+        <span class="	glyphicon glyphicon-download-alt"></span>
+      </button>
 
   <div class="col-md-9">
       <ul class="nav nav-tabs">
@@ -29,9 +31,8 @@
         </tr>
   
   
-  
-        <tr *ngFor="let d of document_data; let x of headings">
-          <td>{{x}}</td>
+        <tr *ngFor="let d of document_data; let i=index">
+          <td>{{headings[i]}}</td> 
           <td>{{d.thisyeardata}}</td>
           <td>{{d.lastyeardata}}</td>
           <td>{{d.twoyearagodata}}</td>
@@ -39,4 +40,5 @@
   
       </table>
     </div>
+  </div>
   </div>

@@ -14,14 +14,17 @@ export class PermanantcsharpComponent implements OnInit {
   headings=[
     "Rank",
     "Rank change year on year",
+    "% of permanent jobs advertised for this skill",
     "Permanent jobs citing",
-    "% of permanent jobs advertised for this skill",
     "% of this skill in job categories",
-    "% of permanent jobs advertised for this skill",
-  ] 
-
-  headingsString = JSON.stringify(this.headings[1]);
-  
+    "Number of Salaries Quoted",
+    "UK Median annual Salary",
+    "10th Percentile",
+    "Median Salary % change year on year",
+    "90th Percentile",
+    "UK Excluding London Median Annual Salary",
+    "% Change year on year"
+  ]
 
   document_data = [{
     thisyeardata:"firstvalue",
@@ -33,7 +36,7 @@ export class PermanantcsharpComponent implements OnInit {
     this.permdataaccess.getCsharpData().subscribe( res => { this.document_data = res;
       this.document_data.forEach(element => {
         console.log(element);
-        console.log(this.headingsString)
+
         })
       }
     )

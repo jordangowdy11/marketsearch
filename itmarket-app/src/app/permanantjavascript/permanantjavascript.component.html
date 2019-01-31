@@ -29,12 +29,12 @@
     
   
    
-      <tr *ngFor="let d of document_data; let x of headings">
-        <td>{{x}}</td>        
+      <tr *ngFor="let d of document_data; let i=index">
+        <td>{{headings[i]}}</td>   
         <td>{{d.thisyeardata}}</td>
         <td>{{d.lastyeardata}}</td>
         <td>{{d.twoyearagodata}}</td>
-        <td><button (click)="addToLocal(d.thisyeardata, d.lastyeardata, d.twoyearagodata)">AddToList</button></td>
+        <!-- <td><button (click)="addToLocal(d.thisyeardata, d.lastyeardata, d.twoyearagodata)">AddToList</button></td> -->
       </tr>
     </table>
   </div>
