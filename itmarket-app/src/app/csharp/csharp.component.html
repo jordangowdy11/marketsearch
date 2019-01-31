@@ -3,15 +3,46 @@
   <p>There's no formal career track for becoming a DevOps engineer. They are either developers who get interested in deployment and network operations, or sysadmins who have a passion for scripting and coding, and move into the development side where they can improve the planning of test and deployment.</p>
   <p>average salary outside and inside of London(print from mongo)</p> 
   <p>Year on Year statistics</p>
+  <button (click)="downloadPDF()" class="btn btn-sm btn-info">
+      <span class="	glyphicon glyphicon-download-alt"></span>
+    </button>
   
   </div>
 
-<table class="table">
+  <div class="col-md-9">
+      <ul class="nav nav-tabs">
+          <li><a routerLink="/contract/python">Python</a></li>
+          <li><a routerLink="/contract/sql">SQL</a></li>
+          <li><a routerLink="/contract/javascript">Java-Script</a></li>
+          <li><a routerLink="/contract/microsoft">Microsoft</a></li>
+          <li><a routerLink="/contract/java">Java</a></li>
+          <li><a routerLink="/contract/html">HTML</a></li>
+          <li><a routerLink="/contract/scrum">Scrum</a></li>
+          <li><a routerLink="/contract/devops">DevOps</a></li>
+          <li><a routerLink="/contract/aws">AWS</a></li>
+        </ul>
+      </div>
 
-<th>Location</th>
-<th>6 Months to 25 Jan 2019</th>
-<th>Same Period 2018</th>
-<th>Same Period </th>
-
-
-</table>
+      <div class="col-md-9">
+          <div class="table_data">
+            <table class="table">
+          
+              <tr>
+                <th>Statistics</th>
+                <th>6 months to 30 Jan 2019</th>
+                <th>Same period 2018</th>
+                <th>Same period 2017</th>
+              </tr>
+          
+          
+          
+              <tr *ngFor="let d of contract_document_data; let x of headingsString">
+                <td>{{headingsString}}</td>
+                <td>{{d.thisyeardata}}</td>
+                <td>{{d.lastyeardata}}</td>
+                <td>{{d.twoyearagodata}}</td>
+              </tr>
+          
+            </table>
+          </div>
+          </div>

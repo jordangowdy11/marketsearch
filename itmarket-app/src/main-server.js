@@ -161,6 +161,105 @@ app.use(cors())
       })
     })
   })
+  app.get("/language_data/cont_csharp", (req, res) =>{
+    MongoClient.connect('mongodb://localhost:27017/language_data', function(err,client){
+      if(err) { throw err}
+      console.log("Connected on Request");
+      var db = client.db("language_data");
+      db.collection("cont_csharp").find().toArray(function(err, result) {
+        console.log(result)
+        res.send(result)
+      })
+    })
+  })
+  app.get("/language_data/cont_devops", (req, res) =>{
+    MongoClient.connect('mongodb://localhost:27017/language_data', function(err,client){
+      if(err) { throw err}
+      console.log("Connected on Request");
+      var db = client.db("language_data");
+      db.collection("cont_devops").find().toArray(function(err, result) {
+        console.log(result)
+        res.send(result)
+      })
+    })
+  })
+  app.get("/language_data/cont_html", (req, res) =>{
+    MongoClient.connect('mongodb://localhost:27017/language_data', function(err,client){
+      if(err) { throw err}
+      console.log("Connected on Request");
+      var db = client.db("language_data");
+      db.collection("cont_html").find().toArray(function(err, result) {
+        console.log(result)
+        res.send(result)
+      })
+    })
+  })
+  app.get("/language_data/cont_java", (req, res) =>{
+    MongoClient.connect('mongodb://localhost:27017/language_data', function(err,client){
+      if(err) { throw err}
+      console.log("Connected on Request");
+      var db = client.db("language_data");
+      db.collection("cont_java").find().toArray(function(err, result) {
+        console.log(result)
+        res.send(result)
+      })
+    })
+  })
+  app.get("/language_data/cont_javascript", (req, res) =>{
+    MongoClient.connect('mongodb://localhost:27017/language_data', function(err,client){
+      if(err) { throw err}
+      console.log("Connected on Request");
+      var db = client.db("language_data");
+      db.collection("cont_javascript").find().toArray(function(err, result) {
+        console.log(result)
+        res.send(result)
+      })
+    })
+  })
+  app.get("/language_data/cont_microsoft", (req, res) =>{
+    MongoClient.connect('mongodb://localhost:27017/language_data', function(err,client){
+      if(err) { throw err}
+      console.log("Connected on Request");
+      var db = client.db("language_data");
+      db.collection("cont_microsoft").find().toArray(function(err, result) {
+        console.log(result)
+        res.send(result)
+      })
+    })
+  })
+  app.get("/language_data/cont_python", (req, res) =>{
+    MongoClient.connect('mongodb://localhost:27017/language_data', function(err,client){
+      if(err) { throw err}
+      console.log("Connected on Request");
+      var db = client.db("language_data");
+      db.collection("cont_python").find().toArray(function(err, result) {
+        console.log(result)
+        res.send(result)
+      })
+    })
+  })
+  app.get("/language_data/cont_scrum", (req, res) =>{
+    MongoClient.connect('mongodb://localhost:27017/language_data', function(err,client){
+      if(err) { throw err}
+      console.log("Connected on Request");
+      var db = client.db("language_data");
+      db.collection("cont_scrum").find().toArray(function(err, result) {
+        console.log(result)
+        res.send(result)
+      })
+    })
+    app.get("/language_data/cont_sql", (req, res) =>{
+      MongoClient.connect('mongodb://localhost:27017/language_data', function(err,client){
+        if(err) { throw err}
+        console.log("Connected on Request");
+        var db = client.db("language_data");
+        db.collection("cont_sql").find().toArray(function(err, result) {
+          console.log(result)
+          res.send(result)
+        })
+      })
+    })
+  })
 
 
  //listen sits and patiently waits for http requests at defined port above, defined as 8080 atm
