@@ -38,6 +38,8 @@ app.get("/language_data/mongoquery/:data", (req,res) => {
   })
 })
 
+
+
  //listen sits and patiently waits for http requests at defined port above, defined as 8080 atm
  app.listen(port, () => {
   console.log("Spooky mongo magic has begun hsdfsg ⊙﹏⊙");
