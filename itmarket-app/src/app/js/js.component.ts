@@ -15,18 +15,20 @@ export class JsComponent implements OnInit {
     //   ]
      }
 
-  headings=[
-    "Rank",
-    "Rank change year on year",
-    "Permanent jobs citing",
-    "% of permanent jobs advertised for this skill",
-    "% of this skill in job categories",
-    "% of permanent jobs advertised for this skill",
-  ]
-  
-   
-
-  
+     headings=[
+      "Rank",
+      "Rank change year-on-year",
+      "As % of all contract IT jobs advertised in the UK",
+      "Contract jobs citing JavaScript",
+      "As % of the Programming Languages category",
+      "UK median daily rate",
+      "Median daily rate % change year-on-year",
+      "Number of daily rates quoted",
+      "10th Percentile",
+      "90th Percentile",
+      "% change year-on-year",
+      "UK excluding London median daily rate"
+    ]
   
   headingsString = JSON.stringify(this.headings);
 
@@ -40,7 +42,6 @@ export class JsComponent implements OnInit {
       this.contdataaccess.getContractDocumentData("cont_javascript").subscribe( res => { this.contract_document_data = res;
         this.contract_document_data.forEach(element => {
           console.log(element);
-          console.log(this.headingsString)
           })
         }
       )

@@ -12,14 +12,19 @@ export class MicrosoftComponent implements OnInit {
   constructor(private contdataacess : ContractDataService) { }
 
   headings=[
+    "Rank change year-on-year",
     "Rank",
-    "Rank change year on year",
-    "Permanent jobs citing",
-    "% of permanent jobs advertised for this skill",
-    "% of this skill in job categories",
-    "% of permanent jobs advertised for this skill",
+    "Contract jobs citing Microsoft",
+    "As % of all contract IT jobs advertised in the UK",
+    "Number of daily rates quoted",
+    "As % of the Vendors category",
+    "UK median daily rate",
+    "10th Percentile",
+    "90th Percentile",
+    "UK excluding London median daily rate",
+    "Median daily rate % change year-on-year",
+    "% change year-on-year"
   ] 
-  headingsString = JSON.stringify(this.headings[0]);
 
   contract_document_data = [{
     thisyeardata:"firstvalue",
@@ -31,7 +36,6 @@ export class MicrosoftComponent implements OnInit {
     this.contdataacess.getContractDocumentData("cont_microsoft").subscribe( res => { this.contract_document_data = res;
       this.contract_document_data.forEach(element => {
         console.log(element);
-        console.log(this.headingsString)
         })
       }
     )
