@@ -13,17 +13,17 @@ export class PythonComponent implements OnInit {
 
   headings=[
     "Rank",
-    "Rank change year on year",
-    "% of permanent jobs advertised for this skill",
-    "Permanent jobs citing",
-    "% of this skill in job categories",
-    "Number of Salaries Quoted",
-    "UK Median annual Salary",
-    "10th Percentile",
-    "Median Salary % change year on year",
+    "As % of the Programming Languages category",
     "90th Percentile",
-    "UK Excluding London Median Annual Salary",
-    "% Change year on year"
+    "UK excluding London median daily rate",
+    "% change year-on-year",
+    "As % of all contract IT jobs advertised in the UK",
+    "Rank change year-on-year",
+    "Median daily rate % change year-on-year",
+    "Number of daily rates quoted",
+    "UK median daily rate",
+    "10th Percentile",
+    "Contract jobs citing Python"
   ]
 
 

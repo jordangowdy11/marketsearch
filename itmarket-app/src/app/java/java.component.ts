@@ -14,8 +14,8 @@ export class JavaComponent implements OnInit {
   headings=[
     "Rank",
     "Rank change year on year",
-    "% of permanent jobs advertised for this skill",
     "Permanent jobs citing",
+    "% of permanent jobs advertised for this skill",
     "% of this skill in job categories",
     "Number of Salaries Quoted",
     "UK Median annual Salary",

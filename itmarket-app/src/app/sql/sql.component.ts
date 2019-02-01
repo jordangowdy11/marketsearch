@@ -12,14 +12,19 @@ export class SqlComponent implements OnInit {
   constructor(private contdataacess : ContractDataService) { }
 
   headings=[
+    "As % of the Programming Languages category",
+    "As % of all contract IT jobs advertised in the UK",
+    "10th Percentile",
+    "UK excluding London median daily rate",
+    "90th Percentile",
     "Rank",
-    "Rank change year on year",
-    "Permanent jobs citing",
-    "% of permanent jobs advertised for this skill",
-    "% of this skill in job categories",
-    "% of permanent jobs advertised for this skill",
-  ] 
-  headingsString = JSON.stringify(this.headings[0]);
+    "% change year-on-year",
+    "Rank change year-on-year",
+    "As % of all contract IT jobs advertised in the UK",
+    "UK median daily rate",
+    "Number of daily rates quoted",
+    "Median daily rate % change year-on-year"
+  ]
 
   contract_document_data = [{
     thisyeardata:"firstvalue",
@@ -31,7 +36,6 @@ export class SqlComponent implements OnInit {
     this.contdataacess.getContractDocumentData("cont_sql").subscribe( res => { this.contract_document_data = res;
       this.contract_document_data.forEach(element => {
         console.log(element);
-        console.log(this.headingsString)
         })
       }
     )

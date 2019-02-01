@@ -12,14 +12,19 @@ export class CSharpComponent implements OnInit {
   constructor(private contdataacess : ContractDataService) { }
 
   headings=[
-    "Rank",
     "Rank change year on year",
-    "Permanent jobs citing",
-    "% of permanent jobs advertised for this skill",
-    "% of this skill in job categories",
-    "% of permanent jobs advertised for this skill",
-  ] 
-  headingsString = JSON.stringify(this.headings[0]);
+    "Rank",
+    "Contract jobs citing C#",
+    "As % of all contract IT jobs advertised in the UK",
+    "Number of daily rates quoted",
+    "As % of the Programming Languages category",
+    "UK median daily rate",
+    "Median daily rate % change year-on-year",
+    "10th Percentile",
+    "90th Percentile",
+    "% change year-on-year",
+    "UK excluding London median daily rate"
+  ]
 
   contract_document_data = [{
     thisyeardata:"firstvalue",
@@ -31,7 +36,6 @@ export class CSharpComponent implements OnInit {
     this.contdataacess.getContractDocumentData("cont_csharp").subscribe( res => { this.contract_document_data = res;
       this.contract_document_data.forEach(element => {
         console.log(element);
-        console.log(this.headingsString)
         })
       }
     )
