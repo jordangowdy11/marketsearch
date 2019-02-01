@@ -1,4 +1,4 @@
-<div class="col-md-9" id="content" #content>
+<div class="col-md-12" id="content" #content>
     <h1>Permanant AWS Roles</h1>
     <button (click)="downloadPDF()" class="btn btn-sm btn-info">
         <span class="	glyphicon glyphicon-download-alt"></span>
@@ -19,7 +19,7 @@
       </div>
 
 
-  <div class="col-md-9">
+  <div class="col-md-12">
     <div class="table_data">
       <table class="table">
   
@@ -32,7 +32,7 @@
   
   
         <tr *ngFor="let d of document_data; let i=index">
-          <td>{{headings[i]}}</td> 
+            <td>{{headings[i]}}</td>
           <td>{{d.thisyeardata}}</td>
           <td>{{d.lastyeardata}}</td>
           <td>{{d.twoyearagodata}}</td>

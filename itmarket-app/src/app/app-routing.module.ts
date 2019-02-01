@@ -27,7 +27,7 @@ import { JsComponent } from './js/js.component';
 
 
 const routes: Routes = [
-  {path:'permanent', component:PermanentComponent, data: {animation: 'PermPage'}},
+  {path:'', component:PermanentComponent, data: {animation: 'PermPage'}},
   {path:'contract', component:ContractedComponent, data: {animation: 'ContractPage'}},
   {path:'contract/python',component:PythonComponent, data: {animation: 'ContPy'}},
   {path:'contract/sql',component:SqlComponent, data: {animation: 'ContSQL'}},
