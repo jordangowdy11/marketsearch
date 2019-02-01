@@ -1,7 +1,13 @@
 <div class="col-md-12">
 <h1>Permanent Jobs </h1>
 <p>Permanent employees, regular employees or the directly employed, work for an employer and are paid directly by that employer. Permanent (regular) employees do not have a predetermined end date to employment. In addition to their wages, they often receive benefits like subsidized health care, paid vacations, holidays, sick time, or contributions.</p>
-<table class="table" width="50%">
+<table>
+<tr *ngFor="let d of lastupdatedata">
+  <td>Data Last Updated on: </td>        
+    <td>{{d.LastUpdate}}</td>
+  </tr>  
+</table>
+<table class="table">
   <thead class="thead-dark">
       <tr>
         <th scope="col">Skill/Job Role</th>

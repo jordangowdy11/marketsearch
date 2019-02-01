@@ -39,6 +39,7 @@ export class SqlComponent implements OnInit {
         })
       }
     )
+  
   }
   @ViewChild("content") content: ElementRef;
   public downloadPDF() {

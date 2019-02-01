@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { PermDataService } from '../perm-data.service';
+
 
 
 @Component({
@@ -8,9 +10,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PermanentComponent implements OnInit {
 
-  constructor() { }
+  constructor(private permdataaccess : PermDataService) { }
+
+  lastupdatedata=[{
+    LastUpdate: " "
+   }]
 
   ngOnInit() {
+    this.permdataaccess.getPermDocumentData("last_update").subscribe( res => { this.lastupdatedata = res;
+      this.lastupdatedata.forEach(element => {
+        console.log(element);
+        })
+      }
+    )
+  
+  }
+    
   }
 
-}
+

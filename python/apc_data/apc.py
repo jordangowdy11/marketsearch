@@ -48,7 +48,7 @@ def get_new_contract_data(crawler_topic):
     tr_data = soup.find_all(class_="fig")
 
     x = 0
-    while x < 57:
+    while x < 36:
         list_of_data.append(tr_data[x].text.strip())
         x += 1
         if x == 36:

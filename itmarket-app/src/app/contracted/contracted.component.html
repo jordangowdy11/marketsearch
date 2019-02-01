@@ -1,6 +1,13 @@
 <div class="col-md-12">
 <h1>Contracted Jobs</h1>
 <p>An employee who works under contract for an employer. A contract employee is hired for a specific job at a specific rate of pay. A contract employee does not become a regular addition to the staff and is not considered a permanent employee.</p>
+
+<table>
+    <tr *ngFor="let d of contlastupdatedata">
+      <td>Data Last Updated on: </td>        
+        <td>{{d.LastUpdate}}</td>
+      </tr>  
+    </table>
 <table class="table">
     <thead class="thead-dark">
         <tr>
