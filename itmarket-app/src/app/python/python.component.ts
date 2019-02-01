@@ -34,13 +34,14 @@ export class PythonComponent implements OnInit {
   }]
 
   ngOnInit() {
-    this.contdataacess.getContPythonData().subscribe( res => { this.contract_document_data = res;
+    this.contdataacess.getContractDocumentData("cont_python").subscribe( res => { this.contract_document_data = res;
       this.contract_document_data.forEach(element => {
         console.log(element);
     
         })
       }
     )
+    // console.log(this.headingsString)
   }
   @ViewChild("content") content: ElementRef;
   public downloadPDF() {

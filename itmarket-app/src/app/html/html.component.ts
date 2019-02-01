@@ -14,12 +14,17 @@ export class HtmlComponent implements OnInit {
   headings=[
     "Rank",
     "Rank change year on year",
+    "% of permanent jobs advertised for this skill",
     "Permanent jobs citing",
-    "% of permanent jobs advertised for this skill",
     "% of this skill in job categories",
-    "% of permanent jobs advertised for this skill",
-  ] 
-  headingsString = JSON.stringify(this.headings[0]);
+    "Number of Salaries Quoted",
+    "UK Median annual Salary",
+    "10th Percentile",
+    "Median Salary % change year on year",
+    "90th Percentile",
+    "UK Excluding London Median Annual Salary",
+    "% Change year on year"
+  ]
 
   contract_document_data = [{
     thisyeardata:"firstvalue",
@@ -28,10 +33,9 @@ export class HtmlComponent implements OnInit {
   }]
 
   ngOnInit() {
-    this.contdataacess.getContHtmlData().subscribe( res => { this.contract_document_data = res;
+    this.contdataacess.getContractDocumentData("cont_html").subscribe( res => { this.contract_document_data = res;
       this.contract_document_data.forEach(element => {
         console.log(element);
-        console.log(this.headingsString)
         })
       }
     )

@@ -37,7 +37,7 @@ export class JsComponent implements OnInit {
   }]
 
     ngOnInit() {
-      this.contdataaccess.getContJavascriptData().subscribe( res => { this.contract_document_data = res;
+      this.contdataaccess.getContractDocumentData("cont_javascript").subscribe( res => { this.contract_document_data = res;
         this.contract_document_data.forEach(element => {
           console.log(element);
           console.log(this.headingsString)

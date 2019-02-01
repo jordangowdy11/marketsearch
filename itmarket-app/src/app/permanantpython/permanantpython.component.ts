@@ -37,7 +37,7 @@ export class PermanantpythonComponent implements OnInit {
   
 
   ngOnInit() {
-    this.permdataaccess.getPythonData().subscribe( res => { this.document_data = res;
+    this.permdataaccess.getPermDocumentData("python").subscribe( res => { this.document_data = res;
       this.document_data.forEach(element => {
         console.log(element);
         

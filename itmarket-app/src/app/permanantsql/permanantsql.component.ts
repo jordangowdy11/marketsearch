@@ -32,7 +32,7 @@ export class PermanantsqlComponent implements OnInit {
     twoyearagodata:"thirdvalue"
   }]
   ngOnInit() {
-    this.permdataaccess.getSqlData().subscribe( res => { this.document_data = res;
+    this.permdataaccess.getPermDocumentData("sql").subscribe( res => { this.document_data = res;
       this.document_data.forEach(element => {
         console.log(element);
         

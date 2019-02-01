@@ -33,7 +33,7 @@ export class PermananthtmlComponent implements OnInit {
   }]
 
   ngOnInit() {
-    this.permdataaccess.getHtmlData().subscribe( res => { this.document_data = res;
+    this.permdataaccess.getPermDocumentData("html").subscribe( res => { this.document_data = res;
       this.document_data.forEach(element => {
         console.log(element);
         
