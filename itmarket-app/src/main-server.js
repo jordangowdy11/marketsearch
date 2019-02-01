@@ -51,6 +51,52 @@ app.get("/language_data/mongoquery/:data", (req,res) => {
   })
 })
 
+// Email
+app.post('/send', cors(), (req, res) => {
+  const outputData = `
+  <p>Hello :slightly_smiling_face:  thank you for you mail. here is an Automaic Reponse</p>
+  <h3>Contact Details</h3>
+  <ul>
+    <li>Name: ${req.body.name}</li>
+    <li>Email: ${req.body.email}</li>
+  </ul>
+  <h3>What the automatic email Response says</h3>
+  <p>${req.body.message}</p>
+ `;
+ 
+  let transporter = nodemailer.createTransport({ // node mailer is a module that alows you to send emails
+      host: 'smtp.gmail.com', // host is google mail
+      port: 465, //Unique server
+      secure: false,
+      port: 25,
+      auth: {
+          user: 'luke.rowley101@gmail.com', //the email that will be used to send the response
+          pass: ''
+      },
+      tls: {
+          rejectUnauthorized: false
+      }
+  });
+ 
+  let HelperOptions = {
+      from: '"Market Research" <email',
+      to: 'luke61084@mastek.com',
+      subject: 'Automatic Email Response',
+      text: 'hello',
+      html: outputData
+  };
+ 
+ 
+    transporter.sendMail(HelperOptions, (error, info) => {
+        if (error) {
+            return console.log(error);
+        }
+        console.log("The message was sent!");
+        console.log(info);
+    });
+ 
+ });
+
 
 
  //listen sits and patiently waits for http requests at defined port above, defined as 8080 atm
